@@ -8,6 +8,10 @@ module.exports = {
         white: "#ffffff",
         teal: "#13292A",
         cream: "#e7ded9",
+        "dark-blue": "#1616FF",
+      },
+      minHeight: {
+        inherit: "inherit",
       },
     },
   },
