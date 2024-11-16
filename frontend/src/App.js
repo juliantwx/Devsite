@@ -1,18 +1,26 @@
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
   Navigate,
+  useLocation,
 } from "react-router-dom";
+import { snapToTop } from "./utils/ScrollUtils";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Maintenance from "./pages/Maintenance";
 
 function App() {
   const isMaintenance = true; // TODO: Fetch this variable through subscription to the backend server instead
+
   return (
     <Router>
-      <div className="min-h-screen">
+      <ScrollToTop />
+      <div className="min-h-[1500px]">
+        <Navbar />
         <Routes>
           {isMaintenance ? (
             // Redirect all routes to the Maintenance page if the website is under maintenance
@@ -29,9 +37,21 @@ function App() {
             </>
           )}
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
+}
+
+// This component is necessary because useLocation() can only be used in the context of a <Router> component.
+function ScrollToTop() {
+  const location = useLocation();
+
+  useEffect(() => {
+    snapToTop();
+  }, [location]);
+
+  return null; // Return null as this component does not render anything
 }
 
 export default App;

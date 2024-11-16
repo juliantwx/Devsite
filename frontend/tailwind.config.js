@@ -9,6 +9,7 @@ module.exports = {
         teal: "#13292A",
         cream: "#e7ded9",
         "dark-blue": "#1616FF",
+        black: "#1D1D1D",
       },
       minHeight: {
         inherit: "inherit",

@@ -6,9 +6,12 @@ This project is my personal online portfolio, showcasing a collection of my pers
 
 ## Front-End
 
+The frontend is hosted on Netlify and integrated with GitHub to support continuous deployment. This setup ensures that any updates pushed to the master branch are automatically reflected on the live website.
+
 1. React.js
-2. Material UI
-3. Tailwind CSS
+2. Netlify + GitHub
+3. Material UI
+4. Tailwind CSS
 
 ## Back-End
 
