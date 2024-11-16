@@ -19,7 +19,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-[1500px]">
+      <div className="min-h-screen">
         <Navbar />
         <Routes>
           {isMaintenance ? (
