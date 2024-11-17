@@ -10,7 +10,7 @@ function Navbar() {
 
   return (
     <div className="fixed top-0 left-0 w-full bg-black p-4 z-1000 text-cream">
-      <div className="px-1 sm:px-5">
+      <div className="sm:px-5">
         {/* Main Stack encapsulating all Navbar elements */}
         <Stack
           flexDirection="row"
@@ -21,7 +21,7 @@ function Navbar() {
           <img
             src="/images/SiteIconWhite.png"
             alt="Site's Icon"
-            className="h-4 sm:h-6"
+            className="h-5 sm:h-6"
           />
           {/* URL Button Stack */}
           <Stack
