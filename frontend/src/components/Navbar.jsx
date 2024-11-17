@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { scrollToBottom } from "../utils/ScrollUtils";
-import { Stack } from "@mui/material";
+import { Stack, Divider } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 function Navbar() {
@@ -26,13 +26,24 @@ function Navbar() {
           {/* URL Button Stack */}
           <Stack
             flexDirection="row"
-            gap={{ xs: 2, sm: 3 }}
+            gap={{ xs: 1.25, sm: 3 }}
             justifyContent="center"
             flexGrow={1}
           >
             {/* Display a button for each Menu Item */}
-            {menuItems.map((item, index) => {
-              return (
+            {menuItems.map((item, index) => (
+              <React.Fragment key={index}>
+                {index !== 0 && (
+                  <Divider
+                    orientation="vertical"
+                    variant="middle"
+                    flexItem
+                    sx={{
+                      height: "1.5rem",
+                      borderColor: "#e7ded9",
+                    }}
+                  />
+                )}
                 <button
                   key={index}
                   className="transition-colors hover:text-amber"
@@ -40,8 +51,8 @@ function Navbar() {
                 >
                   {item.toUpperCase()}
                 </button>
-              );
-            })}
+              </React.Fragment>
+            ))}
           </Stack>
           <button
             className="transition-colors hover:text-amber"
