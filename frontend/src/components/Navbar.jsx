@@ -1,5 +1,5 @@
-import React from "react";
-// import React, { useState } from "react";
+// import React from "react";
+import React, { useState } from "react";
 import { scrollToBottom } from "../utils/ScrollUtils";
 import { Stack, Divider } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 function Navbar() {
   const navigate = useNavigate();
   const menuItems = ["home", "projects", "updates"];
-  // const [activeMenuItem, setActiveMenuItem] = useState(null);
+  const [activeMenuItem, setActiveMenuItem] = useState(null);
 
   return (
     <div className="fixed top-0 left-0 w-full bg-black p-4 z-1000 text-cream">
