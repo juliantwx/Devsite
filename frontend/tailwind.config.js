@@ -10,6 +10,7 @@ module.exports = {
         cream: "#e7ded9",
         "dark-blue": "#1616FF",
         black: "#1D1D1D",
+        amber: "#ffb703",
       },
       minHeight: {
         inherit: "inherit",
