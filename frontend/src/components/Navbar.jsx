@@ -18,11 +18,16 @@ function Navbar() {
           justifyContent="space-between"
           className="text-sm sm:text-base"
         >
-          <img
-            src="/images/SiteIconWhite.png"
-            alt="Site's Icon"
-            className="h-5 sm:h-6"
-          />
+          <button
+            className="transition-colors hover:text-amber"
+            onClick={() => navigate("home")}
+          >
+            <img
+              src="/images/SiteIconWhite.png"
+              alt="Site's Icon"
+              className="h-5 sm:h-6"
+            />
+          </button>
           {/* URL Button Stack */}
           <Stack
             flexDirection="row"
