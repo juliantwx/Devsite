@@ -1,45 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import { scrollToBottom } from "../utils/ScrollUtils";
-import { Stack, Button } from "@mui/material";
+import { Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const navigate = useNavigate();
   const menuItems = ["home", "projects", "updates"];
+  const [activeMenuItem, setActiveMenuItem] = useState(null);
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-black p-4 z-1000">
+    <div className="fixed top-0 left-0 w-full bg-black p-4 z-1000 text-cream">
       <div className="px-5">
         {/* Main Stack encapsulating all Navbar elements */}
         <Stack
           flexDirection="row"
           alignItems="center"
           justifyContent="space-between"
+          className="text-sm sm:text-base"
         >
-          <h1 className="text-2xl text-cream font-semibold">Jtwx's</h1>
+          <img
+            src="/images/SiteIconWhite.png"
+            alt="Site's Icon"
+            className="h-4 sm:h-6"
+          />
           {/* URL Button Stack */}
           <Stack
             flexDirection="row"
-            gap={3}
+            gap={{ xs: 2, sm: 3 }}
             justifyContent="center"
             flexGrow={1}
           >
             {/* Display a button for each Menu Item */}
             {menuItems.map((item, index) => {
               return (
-                <Button
+                <button
                   key={index}
-                  variant="contained"
+                  className="transition-colors hover:text-amber"
                   onClick={() => navigate(item)}
                 >
-                  {item}
-                </Button>
+                  {item.toUpperCase()}
+                </button>
               );
             })}
           </Stack>
-          <Button variant="contained" onClick={scrollToBottom}>
-            Contact Me
-          </Button>
+          <button
+            className="transition-colors hover:text-amber"
+            onClick={scrollToBottom}
+          >
+            CONTACT ME
+          </button>
         </Stack>
       </div>
     </div>
