@@ -79,6 +79,9 @@ function Navbar() {
               <React.Fragment key={index}>
                 {index !== 0 && (
                   <Divider
+                    className={`transition-opacity duration-200 ease-out hover:text-amber ${
+                      isHovering ? "opacity-35" : "opacity-100"
+                    }`}
                     orientation="vertical"
                     variant="middle"
                     flexItem
