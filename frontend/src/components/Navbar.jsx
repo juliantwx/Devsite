@@ -90,7 +90,13 @@ function Navbar() {
                 )}
                 <button
                   key={index}
-                  className="transition-colors hover:text-amber"
+                  className={`transition-opacity duration-200 ease-out hover:text-amber ${
+                    isHovering &&
+                    activeMenuItem &&
+                    activeMenuItem.name !== item.name
+                      ? "opacity-35"
+                      : "opacity-100"
+                  }`}
                   onClick={() => item.action?.()} // Execute the item's action if it is declared
                   onMouseEnter={() => {
                     setIsHovering(true);
