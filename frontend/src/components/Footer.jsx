@@ -56,7 +56,7 @@ function Footer() {
                 />
               )}
               {/* Clickable Contact Icon */}
-              <Tooltip title={contact.name} placement="top">
+              <Tooltip title={contact.name} placement="top" arrow>
                 <a
                   href={contact.url}
                   target="_blank"
