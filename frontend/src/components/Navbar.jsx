@@ -16,19 +16,7 @@ function Navbar() {
       name: "PROJECTS",
       description:
         "Dive into my collection of projects, showcasing expertise in full-stack and game development.",
-      subMenu: {
-        "Full-Stack Development": [
-          "SOIL",
-          "Backpacker's Buddy",
-          "Alice's Electronic Bike Shop",
-        ],
-        "Game Development": [
-          "ClawStars",
-          "Mobfish Hunter",
-          "Color Launch",
-          "Box Mania",
-        ],
-      },
+      action: () => navigate("projects"),
     },
     {
       name: "UPDATES",
@@ -113,28 +101,17 @@ function Navbar() {
           </Stack>
         </Stack>
       </div>
-      {/* Navigation Menu that slides out on hover */}
+      {/* Sub-menu that slides out on hover */}
       <div
-        className={`transition-transform duration-500 ${
+        alignItems="center"
+        className={`transition-transform duration-350 flex justify-center ${
           isHovering ? "ease-out" : "ease-in"
-        } fixed left-0 w-full bg-black text-cream p-4 z-40 ${
+        } fixed left-0 w-full bg-black text-cream shadow-xl p-4 sm:px-10 z-40 ${
           isHovering ? "translate-y-16" : "-translate-y-full"
         }`}
       >
         {/* Sub-Menu's description */}
         {activeMenuItem && <p>{activeMenuItem.description}</p>}
-        {/* Sub-Menu's contents */}
-        {activeMenuItem?.subMenu &&
-          Object.entries(activeMenuItem.subMenu).map(([key, value]) => (
-            <div key={key}>
-              <h4>{key}</h4>
-              {value.length > 0 ? (
-                value.map((item, index) => <p key={index}>{item}</p>)
-              ) : (
-                <p>No items available</p>
-              )}
-            </div>
-          ))}
       </div>
     </div>
   );
