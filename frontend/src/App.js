@@ -14,7 +14,7 @@ import NotFound from "./pages/NotFound";
 import Maintenance from "./pages/Maintenance";
 
 function App() {
-  const isMaintenance = true; // TODO: Fetch this variable through subscription to the backend server instead
+  const isMaintenance = false; // TODO: Fetch this variable through subscription to the backend server instead
 
   return (
     <Router>
@@ -32,6 +32,7 @@ function App() {
               <Route path="/" element={<Navigate to="/home" />} />
               {/* Routes to all existing pages */}
               <Route path="/home" element={<Home />} />
+              {/* TODO: Write the routes for all other pages */}
               {/* Reroute all non-existing routes to the 404 page */}
               <Route path="*" element={<NotFound />} />
             </>

@@ -9,8 +9,14 @@ function Navbar() {
     {
       name: "HOME",
       description:
-        "Explore the homepage and get an overview of my portfolio journey.",
+        "Explore the homepage and get an overview of my development journey.",
       action: () => navigate("home"),
+    },
+    {
+      name: "WORK HISTORY",
+      description:
+        "Discover my professional journey and the roles I've excelled in.",
+      action: () => navigate("work"),
     },
     {
       name: "PROJECTS",
