@@ -1,7 +1,7 @@
 import React from "react";
 import { Stack, Rating, Paper } from "@mui/material";
 
-function Review({ name, rating, message, isFocused }) {
+function Review({ name, rating, message, focusLevel }) {
   return (
     <Paper
       elevation={3}
@@ -12,7 +12,12 @@ function Review({ name, rating, message, isFocused }) {
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-end",
-        transform: isFocused ? "scale(1.15)" : "scale(1)",
+        transform:
+          focusLevel === 0
+            ? "scale(1.15)"
+            : Math.abs(focusLevel) === 1
+            ? "scale(1)"
+            : "scale(0.9)",
         transition: "transform 0.5s ease-in-out",
         userSelect: "none",
       }}
