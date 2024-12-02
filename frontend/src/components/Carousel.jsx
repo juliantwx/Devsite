@@ -43,7 +43,7 @@ function Carousel({ items }) {
               key={index}
               className={`flex justify-center transition-opacity duration-500 ${
                 focusLevel === 0
-                  ? "opacity-100 mx-4"
+                  ? "opacity-100 mx-6"
                   : Math.abs(focusLevel) === 1
                   ? "opacity-65"
                   : "opacity-35"
