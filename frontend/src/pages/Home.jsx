@@ -21,14 +21,6 @@ function Home() {
           />
         ))}
       ></Carousel>
-      {/* {reviews.map((review, index) => (
-        <Review
-          key={index}
-          name={review.name}
-          rating={review.rating}
-          message={review.message}
-        />
-      ))} */}
     </Stack>
   );
 }

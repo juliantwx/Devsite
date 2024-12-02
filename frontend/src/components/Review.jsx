@@ -1,27 +1,35 @@
 import React from "react";
 import { Stack, Rating, Paper } from "@mui/material";
 
-function Review({ name, rating, message }) {
+function Review({ name, rating, message, isFocused }) {
   return (
-    <Paper elevation={3} sx={{ borderRadius: "16px", padding: 4 }}>
-      <Stack className="w-[400px] sm:w-[700px]" gap={1} alignItems="center">
-        {/* Reviewer's name and rating */}
-        <Stack direction="row" gap={3} alignItems="center">
-          <h1 className="text-6xl">{name}</h1>
-          <Rating value={rating} size="large" readOnly></Rating>
-        </Stack>
-
-        {/* Reviewer's comments */}
-        <p className="text-xl text-center">
-          <span className="absolute text-3xl -translate-x-3 -translate-y-1">
-            &ldquo;
-          </span>
+    <Paper
+      elevation={3}
+      sx={{
+        borderRadius: "16px",
+        margin: 4,
+        padding: 2,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-end",
+        transform: isFocused ? "scale(1.15)" : "scale(1)",
+        transition: "transform 0.5s ease-in-out",
+      }}
+    >
+      <Stack
+        className="w-[150px] sm:w-[200px] h-[125px] sm:h-[175px]"
+        gap={1}
+        alignItems="center"
+      >
+        {/* Reviewer's name, rating, and comments */}
+        <Rating value={rating} size="large" readOnly></Rating>
+        <p className="text-sm text-center line-clamp-6 overflow-hidden text-ellipses">
           {message}
-          <span className="absolute text-3xl translate-x-1 translate-y-0">
-            &rdquo;
-          </span>
         </p>
       </Stack>
+      <h1 className="text-md font-bold line-clamp-1 text-ellipses italic">
+        {name}
+      </h1>
     </Paper>
   );
 }

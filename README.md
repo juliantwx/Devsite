@@ -12,7 +12,8 @@ The frontend is hosted on Netlify and integrated with GitHub to support continuo
 2. Netlify + GitHub
 3. Material UI
 4. Tailwind CSS
-5. React-Icons
+5. Embela Carousel
+6. React-Icons
 
 ## Back-End
 
