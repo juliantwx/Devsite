@@ -14,7 +14,7 @@ import NotFound from "./pages/NotFound";
 import Maintenance from "./pages/Maintenance";
 
 function App() {
-  const isMaintenance = false; // TODO: Fetch this variable through subscription to the backend server instead
+  const isMaintenance = true; // TODO: Fetch this variable through subscription to the backend server instead
 
   return (
     <Router>
