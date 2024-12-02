@@ -14,6 +14,7 @@ function Review({ name, rating, message, isFocused }) {
         alignItems: "flex-end",
         transform: isFocused ? "scale(1.15)" : "scale(1)",
         transition: "transform 0.5s ease-in-out",
+        userSelect: "none",
       }}
     >
       <Stack
