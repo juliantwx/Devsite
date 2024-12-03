@@ -3,21 +3,28 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
 function Carousel({ items }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 2000 }),
-  ]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      duration: 35,
+      watchDrag: false,
+    },
+    [Autoplay({ delay: 2000 })]
+  );
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemCount = items.length;
 
   useEffect(() => {
     if (!emblaApi) return;
+
     function onSelect() {
       setCurrentIndex(emblaApi.selectedScrollSnap());
     }
+
     emblaApi.on("select", onSelect);
-    emblaApi.reInit();
 
     onSelect();
+    emblaApi.reInit();
 
     return () => {
       emblaApi.off("select", onSelect);

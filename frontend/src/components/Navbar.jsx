@@ -25,12 +25,6 @@ function Navbar() {
       action: () => navigate("projects"),
     },
     {
-      name: "UPDATES",
-      description:
-        "Stay updated with the latest enhancements and upcoming features of my portfolio.",
-      action: () => navigate("updates"),
-    },
-    {
       name: "CONTACT ME",
       description:
         "Reach out to connect or collaborate — find all my contact details here.",
