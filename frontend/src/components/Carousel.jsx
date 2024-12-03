@@ -15,9 +15,19 @@ function Carousel({ items }) {
       setCurrentIndex(emblaApi.selectedScrollSnap());
     }
     emblaApi.on("select", onSelect);
+    emblaApi.reInit();
+
     onSelect();
+
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
   }, [emblaApi]);
 
+  // Returns focus levels that dictate if an item is the current focused element, a neighbouring item of the focused element, or just a regular item.
+  // If item is focused element, return 0
+  // If item is a neighbouring element of the focused item, return 1
+  // If item is a non-focused or neighbouring element, return offset
   function getFocusLevel(index) {
     if (!emblaApi) return -1;
 
@@ -33,15 +43,17 @@ function Carousel({ items }) {
     return offset;
   }
 
+  // Carousel JSX
   return (
     <div ref={emblaRef} className="overflow-hidden w-full">
       <div className="flex">
+        {/* Instantiate items that were passed in into the carousel */}
         {items.map((item, index) => {
           const focusLevel = getFocusLevel(index);
           return (
             <div
               key={index}
-              className={`flex justify-center transition-opacity duration-500 ${
+              className={`transition-opacity duration-500 ${
                 focusLevel === 0
                   ? "opacity-100 mx-6"
                   : Math.abs(focusLevel) === 1

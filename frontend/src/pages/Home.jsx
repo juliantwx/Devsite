@@ -20,7 +20,7 @@ function Home() {
             message={review.message}
           />
         ))}
-      ></Carousel>
+      />
     </Stack>
   );
 }

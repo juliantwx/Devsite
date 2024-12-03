@@ -47,7 +47,6 @@ function Navbar() {
         {/* Main Stack encapsulating all Navbar elements */}
         <Stack
           flexDirection="row"
-          alignItems="center"
           justifyContent="space-between"
           className="text-sm sm:text-base"
         >
@@ -109,7 +108,6 @@ function Navbar() {
       </div>
       {/* Sub-menu that slides out on hover */}
       <div
-        alignItems="center"
         className={`transition-transform duration-350 flex justify-center ${
           isHovering ? "ease-out" : "ease-in"
         } fixed left-0 w-full bg-black text-cream shadow-xl p-4 sm:px-10 z-40 ${
