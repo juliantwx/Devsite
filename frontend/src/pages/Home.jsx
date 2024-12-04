@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Review from "../components/Review";
 import reviews from "../data/reviews";
 import { Stack, Divider } from "@mui/material";
@@ -8,13 +8,27 @@ import "./Home.css";
 function Home() {
   const roles = ["Full-Stack Developer", "Game Developer"];
   const [currentIndex, setCurrentIndex] = useState(0);
+  const roleRef = useRef(null);
 
+  // Setup animation updates via event listeners
   useEffect(() => {
-    const interval = setInterval(() => {
+    function handleAnimationEnd() {
       setCurrentIndex((prev) => (prev + 1) % roles.length);
-    }, 2000);
+    }
 
-    return () => clearInterval(interval);
+    const roleElement = roleRef.current;
+    if (roleElement) {
+      roleElement.addEventListener("animationiteration", handleAnimationEnd);
+    }
+
+    return () => {
+      if (roleElement) {
+        roleElement.removeEventListener(
+          "animationiteration",
+          handleAnimationEnd
+        );
+      }
+    };
   }, []);
 
   return (
@@ -36,6 +50,7 @@ function Home() {
           }}
         />
         <p
+          ref={roleRef}
           className={`text-3xl font-bold transition-transform duration-1000 translate-y-full w-[200px] whitespace-nowrap`}
           style={{
             animation: "slideDown 2s ease-in-out infinite",
