@@ -37,26 +37,26 @@ function Home() {
       <Stack
         flexDirection="row"
         gap={3}
-        className="p-5 justify-center items-center"
+        className="p-5 justify-center items-center text-[24px] sm:text-[50px]"
       >
-        <p className="text-3xl font-bold">Julian Tan</p>
+        <p className="font-bold">{"Julian Tan"}</p>
         <Divider
           flexItem
           sx={{
             borderWidth: "2px",
             borderColor: "#1D1D1D",
             borderRadius: "15px",
-            transform: "rotate(15deg)",
+            // transform: "rotate(15deg)",
           }}
         />
         <p
           ref={roleRef}
-          className={`text-3xl font-bold transition-transform duration-1000 translate-y-full w-[200px] whitespace-nowrap`}
+          className={`font-bold transition-transform duration-1000 translate-y-full w-[500px] whitespace-nowrap`}
           style={{
             animation: "slideDown 2s ease-in-out infinite",
           }}
         >
-          {roles[currentIndex]}
+          {`<${roles[currentIndex]} />`}
         </p>
       </Stack>
 
