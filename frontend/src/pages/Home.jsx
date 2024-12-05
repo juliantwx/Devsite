@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import Review from "../components/Review";
 import reviews from "../data/reviews";
 import skills from "../data/skills";
-import { Stack, Divider } from "@mui/material";
+import {
+  Stack,
+  Divider,
+  Link,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+} from "@mui/material";
+import { IoMdArrowDropdown } from "react-icons/io";
 import TypeWriter from "typewriter-effect";
 import Carousel from "../components/Carousel";
 
 function Home() {
+  const [currentAccordion, setCurrentAccordion] = useState("");
+
+  function changeAccordion(accordion) {
+    setCurrentAccordion(currentAccordion !== accordion ? accordion : "");
+  }
+
   return (
     <Stack gap={5} className="min-h-inherit pt-[7rem] pb-[2.5rem] items-center">
       {/* Title - Name and Roles */}
@@ -32,6 +46,7 @@ function Home() {
             deleteSpeed: 35,
             autoStart: true,
             loop: true,
+            pauseFor: 5000,
           }}
         />
         <p className="ml-[-25px]">{"/>"}</p>
@@ -41,45 +56,124 @@ function Home() {
       <Stack className="p-5 w-[85%]" gap={2}>
         <h1 className="text-3xl font-bold">ABOUT ME</h1>
         <p className="text-justify">
-          Welcome to my online portfolio! My name is Julian Tan, and I am a team
-          oriented game programmer who strives to write clean, efficient and
-          readable code. I’m always eager to learn and experience new
-          experiences in order to add onto my existing skill sets; resulting in
-          unforgettable and intuitive gameplay. ​ I have a Bachelor's Degree in
-          Game Programming and is currently undergoing my Master's Degree in
-          Information Technology. I have multiple titles under my belt and love
-          challenging myself to newer heights. During my free time, I love to
-          keep myself busy by working on different aspects of game development
-          that I am unfamiliar with in order to improve myself. It could be
-          anything from developing mechanics / functions that I have in mind; to
-          tinkering with shader graphs to enhance the visuals of my personal
-          projects. ​ I also enjoy working in a team as I am able to constantly
-          learn from my peers regardless of their profession.
+          Hello and welcome to my online portfolio! I'm <b>Julian Tan</b>, a
+          passionate <b>Full-Stack Developer</b> and <b>Game Developer</b> with
+          a strong background in building innovative applications and immersive
+          experiences. I bring a unique combination of technical expertise and
+          creative problem-solving skills, honed through years of academic and
+          professional experience.
+          <br />
+          <br />I hold a <b>Master of Information Technology</b> from{" "}
+          <b>RMIT University</b>, where I achieved a GPA of <b>3.6</b> and
+          deepened my expertise in emerging technologies. This drive for
+          continuous learning led me to pursue my master's degree, broadening my
+          skill set beyond game development and helping me become a more
+          versatile developer. My{" "}
+          <b>Bachelor's degree in Game Development (HONS)</b> from the{" "}
+          <b>University of Wollongong Malaysia</b> provided the foundation for
+          my journey in creating engaging and interactive digital content.
+          <br />
+          <br />
+          Professionally, I have experience in diverse roles, from developing
+          web applications at <b>DineSeal</b>, where I built a user-friendly
+          drag-and-drop editor, to crafting captivating gameplay and LiveOps for
+          titles like{" "}
+          <Link
+            href="https://clawstarsgame.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            underline="hover"
+          >
+            <b>ClawStars</b>
+          </Link>{" "}
+          at{" "}
+          <Link
+            href="https://www.appxplore.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            underline="hover"
+          >
+            <b>Appxplore</b>
+          </Link>
+          . My freelance work on{" "}
+          <Link
+            href="https://www.fiverr.com/storyfied"
+            target="_blank"
+            rel="noopener noreferrer"
+            underline="hover"
+          >
+            <b>Fiverr</b>
+          </Link>{" "}
+          allowed me to collaborate on diverse projects, ranging from
+          hyper-casual arcade games to educational tools for children with
+          learning difficulties. Whether it's designing reusable React
+          components, optimizing Unity workflows, or integrating third-party
+          analytical tools to boost performance, I thrive in collaborative,
+          fast-paced environments where innovation and precision are key.
+          <br />
+          <br />
+          Outside of work, I enjoy learning new technologies, refining my craft,
+          and staying at the forefront of industry trends. I'm driven by the
+          goal of creating software and games that not only function seamlessly
+          but also deliver meaningful and enjoyable experiences to users.
         </p>
       </Stack>
 
       {/* Skills and Experiences */}
-      <Stack className="p-5 w-[85%]" gap={2}>
-        <h1 className="text-3xl font-bold">SKILL & EXPERIENCES</h1>
-        <Carousel
-          items={skills.map((skill, index) => (
-            <img key={index} src={`/images/${skill}.png`} alt="Site's Icon" />
-          ))}
-        />
+      <Stack className="p-5 w-[85%]">
+        <h1 className="text-3xl font-bold mb-5">SKILL & EXPERIENCES</h1>
+        <Accordion
+          expanded={currentAccordion === "fullstack"}
+          onChange={() => changeAccordion("fullstack")}
+        >
+          <AccordionSummary
+            expandIcon={<IoMdArrowDropdown />}
+            className="font-bold"
+          >
+            Full-Stack Development
+          </AccordionSummary>
+          <AccordionDetails>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+              eget.
+            </p>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion
+          expanded={currentAccordion === "gamedev"}
+          onChange={() => changeAccordion("gamedev")}
+        >
+          <AccordionSummary
+            expandIcon={<IoMdArrowDropdown />}
+            className="font-bold"
+          >
+            Game Development
+          </AccordionSummary>
+          <AccordionDetails>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+              eget.
+            </p>
+          </AccordionDetails>
+        </Accordion>
       </Stack>
 
       {/* Reviews */}
-      <h1>Some of the reviews that I've gotten throughout the years</h1>
-      <Carousel
-        items={reviews.map((review, index) => (
-          <Review
-            key={index}
-            name={review.name}
-            rating={review.rating}
-            message={review.message}
-          />
-        ))}
-      />
+      <Stack className="p-5 w-[85%]" gap={2}>
+        <h1 className="text-3xl font-bold">TESTIMONIALS</h1>
+        <Carousel
+          items={reviews.map((review, index) => (
+            <Review
+              key={index}
+              name={review.name}
+              rating={review.rating}
+              message={review.message}
+            />
+          ))}
+        />
+      </Stack>
     </Stack>
   );
 }
