@@ -60,7 +60,7 @@ function Footer() {
                 <a
                   href={contact.url}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className={`text-[32px] hover:text-amber transition-colors`}
                 >
                   {contact.icon}

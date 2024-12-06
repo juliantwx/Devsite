@@ -6,19 +6,25 @@ import {
   Stack,
   Divider,
   Link,
+  Tooltip,
   Accordion,
   AccordionSummary,
   AccordionDetails,
 } from "@mui/material";
 import { IoMdArrowDropdown } from "react-icons/io";
+import { FaGooglePlay } from "react-icons/fa";
+import { SiSteamworks, SiStencyl } from "react-icons/si";
+import { BiLogoUnity } from "react-icons/bi";
 import TypeWriter from "typewriter-effect";
 import Carousel from "../components/Carousel";
 
 function Home() {
   const [currentAccordion, setCurrentAccordion] = useState("");
+  const [currentDesc, setCurrentDesc] = useState("");
 
   function changeAccordion(accordion) {
     setCurrentAccordion(currentAccordion !== accordion ? accordion : "");
+    setCurrentDesc("");
   }
 
   return (
@@ -46,7 +52,7 @@ function Home() {
             deleteSpeed: 35,
             autoStart: true,
             loop: true,
-            pauseFor: 5000,
+            pauseFor: 3500,
           }}
         />
         <p className="ml-[-25px]">{"/>"}</p>
@@ -131,6 +137,7 @@ function Home() {
             className="font-bold"
           >
             Full-Stack Development
+            <Divider sx={{ borderWidth: "1px" }} />
           </AccordionSummary>
           <AccordionDetails>
             <p>
@@ -151,11 +158,83 @@ function Home() {
             Game Development
           </AccordionSummary>
           <AccordionDetails>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
-            </p>
+            <Stack
+              flexDirection="row"
+              gap={3}
+              className="items-center mt-[-12px] mb-3 h-[50px]"
+            >
+              <Tooltip title="Unity Engine" placement="top" arrow>
+                <span>
+                  <BiLogoUnity
+                    size={48}
+                    className="mb-[-4px] hover:text-taupe transition-colors"
+                    style={{ cursor: "pointer" }}
+                    onMouseEnter={() =>
+                      setCurrentDesc(
+                        "Unity Engine has been my primary tool for game development, allowing me to create immersive gameplay experiences and optimize productivity with custom tools."
+                      )
+                    }
+                  />
+                </span>
+              </Tooltip>
+              <Tooltip title="Stencyl" placement="top" arrow>
+                <span>
+                  <SiStencyl
+                    size={48}
+                    className="hover:text-taupe transition-colors"
+                    style={{ cursor: "pointer" }}
+                    onMouseEnter={() =>
+                      setCurrentDesc(
+                        "Stencyl introduced me to the world of game development, providing a strong foundation in 2D game design and logic-building concepts."
+                      )
+                    }
+                  />
+                </span>
+              </Tooltip>
+              <Tooltip
+                title="Steamworks"
+                placement="top"
+                arrow
+                PopperProps={{
+                  modifiers: [
+                    {
+                      name: "offset",
+                      options: {
+                        offset: [0, -40],
+                      },
+                    },
+                  ],
+                }}
+              >
+                <span>
+                  <SiSteamworks
+                    size={108}
+                    className="mb-2 hover:text-taupe transition-colors"
+                    style={{ cursor: "pointer" }}
+                    onMouseEnter={() =>
+                      setCurrentDesc(
+                        "I utilized Steamworks to implement a multiplayer mode for an internship project, showcasing my ability to integrate third-party APIs and deliver engaging online experiences."
+                      )
+                    }
+                  />
+                </span>
+              </Tooltip>
+              <Tooltip title="Google Play" placement="top" arrow>
+                <span>
+                  <FaGooglePlay
+                    size={40}
+                    className="hover:text-taupe transition-colors"
+                    style={{ cursor: "pointer" }}
+                    onMouseEnter={() =>
+                      setCurrentDesc(
+                        "I leveraged Google Play services to integrate features like cloud saving, leaderboards, and achievements, enriching user experiences with seamless data synchronization."
+                      )
+                    }
+                  />
+                </span>
+              </Tooltip>
+            </Stack>
+            {currentDesc && <p>{currentDesc}</p>}
           </AccordionDetails>
         </Accordion>
       </Stack>

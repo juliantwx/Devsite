@@ -25,6 +25,23 @@ function Navbar() {
       action: () => navigate("projects"),
     },
     {
+      name: "DOWNLOAD CV",
+      description: "Click here to download a PDF version of my resume!",
+      action: () => {
+        const pdfUrl = "/files/JulianTan_CV.pdf";
+
+        // Create an anchor element
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "JulianTan_CV.pdf";
+
+        // Trigger the download
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      },
+    },
+    {
       name: "CONTACT ME",
       description:
         "Reach out to connect or collaborate — find all my contact details here.",

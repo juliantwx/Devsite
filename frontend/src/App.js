@@ -24,7 +24,11 @@ function App() {
         <Routes>
           {isMaintenance ? (
             // Redirect all routes to the Maintenance page if the website is under maintenance
-            <Route path="*" element={<Maintenance />} />
+            <>
+              <Route path="/test" element={<Home />} />
+              {/*TODO: This is only used for testing. Remove this when going live*/}
+              <Route path="*" element={<Maintenance />} />
+            </>
           ) : (
             // Usual routing
             <>
