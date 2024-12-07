@@ -19,12 +19,17 @@ import TypeWriter from "typewriter-effect";
 import Carousel from "../components/Carousel";
 
 function Home() {
-  const [currentAccordion, setCurrentAccordion] = useState("");
-  const [currentDesc, setCurrentDesc] = useState("");
+  const [currentAccordion, setCurrentAccordion] = useState("fullstack");
+  const [currentSkill, setCurrentSkill] = useState(null);
+
+  const skillsData = [{name: "Unity Engine", desc:"Unity Engine has been my primary tool for game development, allowing me to create immersive gameplay experiences and optimize productivity with custom tools."}, 
+    {name: "Stencyl", desc:"Stencyl introduced me to the world of game development, providing a strong foundation in 2D game design and logic-building concepts."},
+    {name: "Steamworks", desc:"I utilized Steamworks to implement a multiplayer mode for an internship project, showcasing my ability to integrate third-party APIs and deliver engaging online experiences."},
+    {name: "Google Play", desc:"I leveraged Google Play services to integrate features like cloud saving, leaderboards, and achievements, enriching user experiences with seamless data synchronization."}]
 
   function changeAccordion(accordion) {
     setCurrentAccordion(currentAccordion !== accordion ? accordion : "");
-    setCurrentDesc("");
+    setCurrentSkill(null);
   }
 
   return (
@@ -163,36 +168,32 @@ function Home() {
               gap={3}
               className="items-center mt-[-12px] mb-3 h-[50px]"
             >
-              <Tooltip title="Unity Engine" placement="top" arrow>
+              <Tooltip title={skillsData[0].name}  placement="top" arrow>
                 <span>
                   <BiLogoUnity
                     size={48}
-                    className="mb-[-4px] hover:text-taupe transition-colors"
+                    className={`mb-[-4px] ${currentSkill.name === skillsData[0].name ? "text-taupe" : ""} hover:text-taupe transition-colors`}
                     style={{ cursor: "pointer" }}
-                    onMouseEnter={() =>
-                      setCurrentDesc(
-                        "Unity Engine has been my primary tool for game development, allowing me to create immersive gameplay experiences and optimize productivity with custom tools."
-                      )
+                    onClick={() =>
+                      setCurrentSkill(skillsData[0])
                     }
                   />
                 </span>
               </Tooltip>
-              <Tooltip title="Stencyl" placement="top" arrow>
+              <Tooltip title={skillsData[1].name} placement="top" arrow>
                 <span>
                   <SiStencyl
                     size={48}
-                    className="hover:text-taupe transition-colors"
+                    className={`${currentSkill.name === skillsData[1].name ? "text-taupe" : ""} hover:text-taupe transition-colors`}
                     style={{ cursor: "pointer" }}
-                    onMouseEnter={() =>
-                      setCurrentDesc(
-                        "Stencyl introduced me to the world of game development, providing a strong foundation in 2D game design and logic-building concepts."
-                      )
+                    onClick={() =>
+                      setCurrentSkill(skillsData[1])
                     }
                   />
                 </span>
               </Tooltip>
               <Tooltip
-                title="Steamworks"
+                title={skillsData[2].name} 
                 placement="top"
                 arrow
                 PopperProps={{
@@ -209,32 +210,28 @@ function Home() {
                 <span>
                   <SiSteamworks
                     size={108}
-                    className="mb-2 hover:text-taupe transition-colors"
+                    className={`mb-2 ${currentSkill.name === skillsData[2].name ? "text-taupe" : ""} hover:text-taupe transition-colors`}
                     style={{ cursor: "pointer" }}
-                    onMouseEnter={() =>
-                      setCurrentDesc(
-                        "I utilized Steamworks to implement a multiplayer mode for an internship project, showcasing my ability to integrate third-party APIs and deliver engaging online experiences."
-                      )
+                    onClick={() =>
+                      setCurrentSkill(skillsData[2])
                     }
                   />
                 </span>
               </Tooltip>
-              <Tooltip title="Google Play" placement="top" arrow>
+              <Tooltip title={skillsData[3].name} placement="top" arrow>
                 <span>
                   <FaGooglePlay
                     size={40}
-                    className="hover:text-taupe transition-colors"
+                    className={`${currentSkill.name === skillsData[3].name ? "text-taupe" : ""} hover:text-taupe transition-colors`}
                     style={{ cursor: "pointer" }}
-                    onMouseEnter={() =>
-                      setCurrentDesc(
-                        "I leveraged Google Play services to integrate features like cloud saving, leaderboards, and achievements, enriching user experiences with seamless data synchronization."
-                      )
+                    onClick={() =>
+                      setCurrentSkill(skillsData[3])
                     }
                   />
                 </span>
               </Tooltip>
             </Stack>
-            {currentDesc && <p>{currentDesc}</p>}
+            {currentSkill && <p>{currentSkill.desc}</p>}
           </AccordionDetails>
         </Accordion>
       </Stack>
