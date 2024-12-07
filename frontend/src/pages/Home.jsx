@@ -17,11 +17,22 @@ import Carousel from "../components/Carousel";
 
 function Home() {
   const [currentAccordion, setCurrentAccordion] = useState("Game Development");
-  const [currentSkill, setCurrentSkill] = useState(null);
+  const [currentSkill, setCurrentSkill] = useState(
+    getDefaultSkill(currentAccordion)
+  );
 
-  function changeAccordion(accordion) {
-    setCurrentAccordion(currentAccordion !== accordion ? accordion : "");
-    setCurrentSkill(null);
+  // Returns the first element of a given skill category
+  function getDefaultSkill(category) {
+    return (
+      skills.find((skillCategory) => skillCategory.category === category)
+        ?.skills?.[0] || null
+    );
+  }
+
+  // Update the current accordion and skill
+  function changeAccordion(category) {
+    setCurrentAccordion(currentAccordion !== category ? category : "");
+    setCurrentSkill(getDefaultSkill(category));
   }
 
   return (
@@ -164,8 +175,10 @@ function Home() {
                       <skill.icon
                         size={skill.iconSize}
                         className={`${skill?.options ?? ""} ${
-                          currentSkill?.name === skill.name ? "text-taupe" : ""
-                        } hover:text-taupe transition-colors`}
+                          currentSkill?.name === skill.name
+                            ? "text-dark-blue"
+                            : ""
+                        } hover:text-amber transition-colors`}
                         style={{ cursor: "pointer" }}
                         onClick={() => setCurrentSkill(skill)}
                       />

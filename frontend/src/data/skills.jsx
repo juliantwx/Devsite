@@ -1,6 +1,6 @@
 // This file defines an array of image names representing my skills and experiences.
 
-import { FaGooglePlay } from "react-icons/fa";
+import { FaGooglePlay, FaGithub } from "react-icons/fa";
 import { SiSteamworks, SiStencyl } from "react-icons/si";
 import { BiLogoUnity } from "react-icons/bi";
 
@@ -41,6 +41,18 @@ const skills = [
         iconSize: 40,
         toolTipOffset: [0, 0],
         desc: "I leveraged Google Play services to integrate features like cloud saving, leaderboards, and achievements, enriching user experiences with seamless data synchronization.",
+      },
+    ],
+  },
+  {
+    category: "Development Tools",
+    skills: [
+      {
+        name: "GitHub",
+        icon: FaGithub,
+        iconSize: 48,
+        toolTipOffset: [0, 0],
+        desc: "GitHub has been my go-to platform for version control and collaboration, enabling me to manage projects efficiently, and share code with team members, streamlining the development process.",
       },
     ],
   },
