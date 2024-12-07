@@ -12,20 +12,12 @@ import {
   AccordionDetails,
 } from "@mui/material";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { FaGooglePlay } from "react-icons/fa";
-import { SiSteamworks, SiStencyl } from "react-icons/si";
-import { BiLogoUnity } from "react-icons/bi";
 import TypeWriter from "typewriter-effect";
 import Carousel from "../components/Carousel";
 
 function Home() {
-  const [currentAccordion, setCurrentAccordion] = useState("fullstack");
+  const [currentAccordion, setCurrentAccordion] = useState("Game Development");
   const [currentSkill, setCurrentSkill] = useState(null);
-
-  const skillsData = [{name: "Unity Engine", desc:"Unity Engine has been my primary tool for game development, allowing me to create immersive gameplay experiences and optimize productivity with custom tools."}, 
-    {name: "Stencyl", desc:"Stencyl introduced me to the world of game development, providing a strong foundation in 2D game design and logic-building concepts."},
-    {name: "Steamworks", desc:"I utilized Steamworks to implement a multiplayer mode for an internship project, showcasing my ability to integrate third-party APIs and deliver engaging online experiences."},
-    {name: "Google Play", desc:"I leveraged Google Play services to integrate features like cloud saving, leaderboards, and achievements, enriching user experiences with seamless data synchronization."}]
 
   function changeAccordion(accordion) {
     setCurrentAccordion(currentAccordion !== accordion ? accordion : "");
@@ -133,107 +125,58 @@ function Home() {
       {/* Skills and Experiences */}
       <Stack className="p-5 w-[85%]">
         <h1 className="text-3xl font-bold mb-5">SKILL & EXPERIENCES</h1>
-        <Accordion
-          expanded={currentAccordion === "fullstack"}
-          onChange={() => changeAccordion("fullstack")}
-        >
-          <AccordionSummary
-            expandIcon={<IoMdArrowDropdown />}
-            className="font-bold"
+        {skills.map((skillCategory) => (
+          <Accordion
+            key={skillCategory.category}
+            expanded={currentAccordion === skillCategory.category}
+            onChange={() => changeAccordion(skillCategory.category)}
           >
-            Full-Stack Development
-            <Divider sx={{ borderWidth: "1px" }} />
-          </AccordionSummary>
-          <AccordionDetails>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
-            </p>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          expanded={currentAccordion === "gamedev"}
-          onChange={() => changeAccordion("gamedev")}
-        >
-          <AccordionSummary
-            expandIcon={<IoMdArrowDropdown />}
-            className="font-bold"
-          >
-            Game Development
-          </AccordionSummary>
-          <AccordionDetails>
-            <Stack
-              flexDirection="row"
-              gap={3}
-              className="items-center mt-[-12px] mb-3 h-[50px]"
+            <AccordionSummary
+              expandIcon={<IoMdArrowDropdown />}
+              className="font-bold"
             >
-              <Tooltip title={skillsData[0].name}  placement="top" arrow>
-                <span>
-                  <BiLogoUnity
-                    size={48}
-                    className={`mb-[-4px] ${currentSkill.name === skillsData[0].name ? "text-taupe" : ""} hover:text-taupe transition-colors`}
-                    style={{ cursor: "pointer" }}
-                    onClick={() =>
-                      setCurrentSkill(skillsData[0])
-                    }
-                  />
-                </span>
-              </Tooltip>
-              <Tooltip title={skillsData[1].name} placement="top" arrow>
-                <span>
-                  <SiStencyl
-                    size={48}
-                    className={`${currentSkill.name === skillsData[1].name ? "text-taupe" : ""} hover:text-taupe transition-colors`}
-                    style={{ cursor: "pointer" }}
-                    onClick={() =>
-                      setCurrentSkill(skillsData[1])
-                    }
-                  />
-                </span>
-              </Tooltip>
-              <Tooltip
-                title={skillsData[2].name} 
-                placement="top"
-                arrow
-                PopperProps={{
-                  modifiers: [
-                    {
-                      name: "offset",
-                      options: {
-                        offset: [0, -40],
-                      },
-                    },
-                  ],
-                }}
+              {skillCategory.category}
+            </AccordionSummary>
+            <AccordionDetails>
+              <Stack
+                flexDirection="row"
+                gap={3}
+                className="items-center mt-[-12px] mb-3 h-[50px]"
               >
-                <span>
-                  <SiSteamworks
-                    size={108}
-                    className={`mb-2 ${currentSkill.name === skillsData[2].name ? "text-taupe" : ""} hover:text-taupe transition-colors`}
-                    style={{ cursor: "pointer" }}
-                    onClick={() =>
-                      setCurrentSkill(skillsData[2])
-                    }
-                  />
-                </span>
-              </Tooltip>
-              <Tooltip title={skillsData[3].name} placement="top" arrow>
-                <span>
-                  <FaGooglePlay
-                    size={40}
-                    className={`${currentSkill.name === skillsData[3].name ? "text-taupe" : ""} hover:text-taupe transition-colors`}
-                    style={{ cursor: "pointer" }}
-                    onClick={() =>
-                      setCurrentSkill(skillsData[3])
-                    }
-                  />
-                </span>
-              </Tooltip>
-            </Stack>
-            {currentSkill && <p>{currentSkill.desc}</p>}
-          </AccordionDetails>
-        </Accordion>
+                {skillCategory.skills.map((skill) => (
+                  <Tooltip
+                    key={skill.name}
+                    title={skill.name}
+                    placement="top"
+                    arrow
+                    PopperProps={{
+                      modifiers: [
+                        {
+                          name: "offset",
+                          options: {
+                            offset: skill.toolTipOffset,
+                          },
+                        },
+                      ],
+                    }}
+                  >
+                    <span>
+                      <skill.icon
+                        size={skill.iconSize}
+                        className={`${skill?.options ?? ""} ${
+                          currentSkill?.name === skill.name ? "text-taupe" : ""
+                        } hover:text-taupe transition-colors`}
+                        style={{ cursor: "pointer" }}
+                        onClick={() => setCurrentSkill(skill)}
+                      />
+                    </span>
+                  </Tooltip>
+                ))}
+              </Stack>
+              {currentSkill && <p>{currentSkill.desc}</p>}
+            </AccordionDetails>
+          </Accordion>
+        ))}
       </Stack>
 
       {/* Reviews */}
