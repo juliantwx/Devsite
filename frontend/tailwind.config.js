@@ -11,6 +11,7 @@ module.exports = {
         "dark-blue": "#1616FF",
         black: "#1D1D1D",
         amber: "#ffb703",
+        gray: "#808080",
       },
       minHeight: {
         inherit: "inherit",

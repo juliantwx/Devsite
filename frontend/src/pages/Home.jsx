@@ -175,10 +175,8 @@ function Home() {
                       <skill.icon
                         size={skill.iconSize}
                         className={`${skill?.options ?? ""} ${
-                          currentSkill?.name === skill.name
-                            ? "text-dark-blue"
-                            : ""
-                        } hover:text-amber transition-colors`}
+                          currentSkill?.name === skill.name ? "" : "text-gray"
+                        } hover:text-black transition-colors`}
                         style={{ cursor: "pointer" }}
                         onClick={() => setCurrentSkill(skill)}
                       />
