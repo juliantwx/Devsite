@@ -16,6 +16,9 @@ module.exports = {
       minHeight: {
         inherit: "inherit",
       },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+      }
     },
   },
   plugins: [],

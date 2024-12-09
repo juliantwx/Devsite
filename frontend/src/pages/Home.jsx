@@ -4,6 +4,7 @@ import reviews from "../data/reviews";
 import skills from "../data/skills";
 import {
   Stack,
+  Grid2 as Grid,
   Divider,
   Link,
   Tooltip,
@@ -149,29 +150,20 @@ function Home() {
               {skillCategory.category}
             </AccordionSummary>
             <AccordionDetails>
-              <Stack
-                flexDirection="row"
-                gap={3}
-                className="items-center mt-[-12px] mb-3 h-[50px]"
-              >
+              <Stack gap={3}>
+            <Grid
+              container
+              spacing={3}
+              alignItems="center"
+            >
                 {skillCategory.skills.map((skill) => (
                   <Tooltip
                     key={skill.name}
                     title={skill.name}
                     placement="top"
                     arrow
-                    PopperProps={{
-                      modifiers: [
-                        {
-                          name: "offset",
-                          options: {
-                            offset: skill.toolTipOffset,
-                          },
-                        },
-                      ],
-                    }}
                   >
-                    <span>
+                    <span className="h-[50px] flex items-center">
                       <skill.icon
                         size={skill.iconSize}
                         className={`${skill?.options ?? ""} ${
@@ -183,8 +175,9 @@ function Home() {
                     </span>
                   </Tooltip>
                 ))}
-              </Stack>
+              </Grid>
               {currentSkill && <p>{currentSkill.desc}</p>}
+              </Stack>
             </AccordionDetails>
           </Accordion>
         ))}
