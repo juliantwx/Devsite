@@ -192,7 +192,7 @@ function Home() {
                     </Tooltip>
                   ))}
                 </Grid>
-                {currentSkill && currentSkill.desc()}
+                {currentSkill && currentSkill.desc && currentSkill.desc()}
               </Stack>
             </AccordionDetails>
           </Accordion>

@@ -1,8 +1,21 @@
 // This file defines an array of image names representing my skills and experiences.
 
 import { FaGooglePlay, FaGithub } from "react-icons/fa";
-import { SiSteamworks, SiStencyl } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
+import {
+  SiSteamworks,
+  SiStencyl,
+  SiJavascript,
+  SiTypescript,
+  SiSwift,
+  SiPython,
+  SiHtml5,
+  SiCss3,
+  SiCplusplus,
+  SiCsharp,
+} from "react-icons/si";
 import { BiLogoUnity } from "react-icons/bi";
+import { BsFiletypeSql } from "react-icons/bs";
 import CustomSVG from "../components/CustomSVG";
 
 const skills = [
@@ -87,8 +100,63 @@ const skills = [
         name: "GitHub",
         icon: FaGithub,
         iconSize: 48,
-        toolTipOffset: [0, 0],
-        desc: "GitHub has been my go-to platform for version control and collaboration, enabling me to manage projects efficiently, and share code with team members, streamlining the development process.",
+        desc: () => (
+          <div>
+            GitHub has been my go-to platform for version control and
+            collaboration, enabling me to manage projects efficiently, and share
+            code with team members, streamlining the development process.
+          </div>
+        ),
+      },
+    ],
+  },
+  {
+    category: "Development Languages",
+    skills: [
+      {
+        name: "C#",
+        icon: SiCsharp,
+        iconSize: 48,
+      },
+      {
+        name: "C++",
+        icon: SiCplusplus,
+        iconSize: 48,
+      },
+      {
+        name: "JavaScript",
+        icon: SiJavascript,
+        iconSize: 48,
+      },
+      {
+        name: "TypeScript",
+        icon: SiTypescript,
+        iconSize: 48,
+      },
+      {
+        name: "Swift",
+        icon: SiSwift,
+        iconSize: 48,
+      },
+      {
+        name: "Python",
+        icon: SiPython,
+        iconSize: 48,
+      },
+      {
+        name: "SQL",
+        icon: BsFiletypeSql,
+        iconSize: 48,
+      },
+      {
+        name: "HTML",
+        icon: SiHtml5,
+        iconSize: 48,
+      },
+      {
+        name: "CSS",
+        icon: SiCss3,
+        iconSize: 48,
       },
     ],
   },
