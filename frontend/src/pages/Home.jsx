@@ -41,15 +41,32 @@ function Home() {
       {/* Title - Name and Roles */}
       <Stack
         flexDirection="row"
-        gap={3}
-        className="p-5 justify-center items-center text-[24px] sm:text-[46px]"
+        sx={{
+          p: 5,
+          justifyContent: "center",
+          alignItems: "center",
+          gap: {
+            xs: 1,
+            sm: 2.5,
+          },
+          fontSize: {
+            xs: "24px",
+            sm: "32px",
+            md: "48px",
+          },
+          whiteSpace: "nowrap",
+        }}
       >
-        <p className="mr-[-25px]">{"<"}</p>
+        <p className="mr-[-10px] sm:mr-[-15px]">{"<"}</p>
         <p className="font-bold">Julian Tan</p>
         <Divider
           flexItem
           sx={{
-            borderWidth: "2px",
+            borderWidth: {
+              xs: "1px",
+              sm: "1.5px",
+              md: "2px",
+            },
             borderColor: "#1D1D1D",
             borderRadius: "15px",
           }}
@@ -64,7 +81,7 @@ function Home() {
             pauseFor: 3500,
           }}
         />
-        <p className="ml-[-25px]">{"/>"}</p>
+        <p className="ml-[-10px] sm:ml-[-15px]">{"/>"}</p>
       </Stack>
 
       {/* About Me */}
@@ -137,6 +154,7 @@ function Home() {
       {/* Skills and Experiences */}
       <Stack className="p-5 w-[85%]">
         <h1 className="text-3xl font-bold mb-5">SKILL & EXPERIENCES</h1>
+        {/* Create an accordion for each skill category */}
         {skills.map((skillCategory) => (
           <Accordion
             key={skillCategory.category}
@@ -151,32 +169,30 @@ function Home() {
             </AccordionSummary>
             <AccordionDetails>
               <Stack gap={3}>
-            <Grid
-              container
-              spacing={3}
-              alignItems="center"
-            >
-                {skillCategory.skills.map((skill) => (
-                  <Tooltip
-                    key={skill.name}
-                    title={skill.name}
-                    placement="top"
-                    arrow
-                  >
-                    <span className="h-[50px] flex items-center">
-                      <skill.icon
-                        size={skill.iconSize}
-                        className={`${skill?.options ?? ""} ${
+                <Grid container spacing={3} alignItems="center">
+                  {/* Display skills icon in a grid format */}
+                  {skillCategory.skills.map((skill) => (
+                    <Tooltip
+                      key={skill.name}
+                      title={skill.name}
+                      placement="top"
+                      arrow
+                    >
+                      <span
+                        className={`h-[50px] flex items-center ${
+                          skill?.options ?? ""
+                        } ${
                           currentSkill?.name === skill.name ? "" : "text-gray"
                         } hover:text-black transition-colors`}
-                        style={{ cursor: "pointer" }}
                         onClick={() => setCurrentSkill(skill)}
-                      />
-                    </span>
-                  </Tooltip>
-                ))}
-              </Grid>
-              {currentSkill && <p>{currentSkill.desc}</p>}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <skill.icon size={skill.iconSize} />
+                      </span>
+                    </Tooltip>
+                  ))}
+                </Grid>
+                {currentSkill && currentSkill.desc()}
               </Stack>
             </AccordionDetails>
           </Accordion>
