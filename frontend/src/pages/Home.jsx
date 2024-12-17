@@ -169,7 +169,13 @@ function Home() {
             </AccordionSummary>
             <AccordionDetails>
               <Stack gap={3}>
-                <Grid container spacing={3} alignItems="center">
+                <Grid
+                  container
+                  spacing={3}
+                  className={`${
+                    currentSkill && currentSkill.desc ? "" : "pb-4"
+                  }`}
+                >
                   {/* Display skills icon in a grid format */}
                   {skillCategory.skills.map((skill) => (
                     <Tooltip
@@ -180,14 +186,15 @@ function Home() {
                     >
                       <span
                         className={`h-[50px] flex items-center ${
-                          skill?.options ?? ""
-                        } ${
                           currentSkill?.name === skill.name ? "" : "text-gray"
                         } hover:text-black transition-colors`}
                         onClick={() => setCurrentSkill(skill)}
                         style={{ cursor: "pointer" }}
                       >
-                        <skill.icon size={skill.iconSize} />
+                        <skill.icon
+                          className={`${skill?.options ?? ""}`}
+                          size={skill.iconSize}
+                        />
                       </span>
                     </Tooltip>
                   ))}

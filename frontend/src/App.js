@@ -14,7 +14,7 @@ import NotFound from "./pages/NotFound";
 import Maintenance from "./pages/Maintenance";
 
 function App() {
-  const isMaintenance = true; // TODO: Fetch this variable through subscription to the backend server instead
+  const isMaintenance = false; // TODO: Fetch this variable through subscription to the backend server instead
 
   return (
     <Router>
@@ -25,8 +25,6 @@ function App() {
           {isMaintenance ? (
             // Redirect all routes to the Maintenance page if the website is under maintenance
             <>
-              <Route path="/test" element={<Home />} />
-              {/*TODO: This is only used for testing. Remove this when going live*/}
               <Route path="*" element={<Maintenance />} />
             </>
           ) : (
