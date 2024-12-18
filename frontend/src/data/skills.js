@@ -39,6 +39,7 @@ const skills = [
     category: "Web Development - Front End",
     skills: [
       {
+        // TODO: Refine this
         name: "React",
         icon: SiReact,
         iconSize: 45,
@@ -109,6 +110,7 @@ const skills = [
     ],
   },
   {
+    // TODO: Refine this
     category: "Web Development - Back End",
     skills: [
       {
@@ -364,6 +366,40 @@ const skills = [
     ],
   },
   {
+    // TODO: Refine this
+    category: "Databases",
+    skills: [
+      {
+        name: "MySQL",
+        icon: SiMysql,
+        iconSize: 45,
+        desc: () => (
+          <div>
+            MySQL has been a cornerstone in my backend development experience,
+            allowing me to design and manage relational databases efficiently.
+            Its robust querying capabilities and reliability have made it a
+            go-to choice for projects requiring structured and scalable data
+            storage.
+          </div>
+        ),
+      },
+      {
+        name: "SQLite",
+        icon: SiSqlite,
+        iconSize: 45,
+        desc: () => (
+          <div>
+            SQLite's lightweight nature and self-contained architecture have
+            made it ideal for quick prototyping and mobile application
+            development. I’ve relied on it for projects where simplicity and
+            portability were key, appreciating its seamless integration and ease
+            of use.
+          </div>
+        ),
+      },
+    ],
+  },
+  {
     category: "Development Tools",
     skills: [
       {
@@ -493,39 +529,6 @@ const skills = [
         name: "CSS",
         icon: SiCss3,
         iconSize: 45,
-      },
-    ],
-  },
-  {
-    category: "Databases",
-    skills: [
-      {
-        name: "MySQL",
-        icon: SiMysql,
-        iconSize: 45,
-        desc: () => (
-          <div>
-            MySQL has been a cornerstone in my backend development experience,
-            allowing me to design and manage relational databases efficiently.
-            Its robust querying capabilities and reliability have made it a
-            go-to choice for projects requiring structured and scalable data
-            storage.
-          </div>
-        ),
-      },
-      {
-        name: "SQLite",
-        icon: SiSqlite,
-        iconSize: 45,
-        desc: () => (
-          <div>
-            SQLite's lightweight nature and self-contained architecture have
-            made it ideal for quick prototyping and mobile application
-            development. I’ve relied on it for projects where simplicity and
-            portability were key, appreciating its seamless integration and ease
-            of use.
-          </div>
-        ),
       },
     ],
   },

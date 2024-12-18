@@ -35,6 +35,17 @@ function App() {
               {/* Routes to all existing pages */}
               <Route path="/home" element={<Home />} />
               {/* TODO: Write the routes for all other pages */}
+              <Route path="/work" element={<Maintenance />} />
+              <Route path="/projects" element={<Maintenance />} />
+              <Route path="/projects/box-mania" element={<Maintenance />} />
+              <Route
+                path="/projects/go-gold-castle"
+                element={<Maintenance />}
+              />
+              <Route
+                path="/projects/backpackers-buddy"
+                element={<Maintenance />}
+              />
               {/* Reroute all non-existing routes to the 404 page */}
               <Route path="*" element={<NotFound />} />
             </>
