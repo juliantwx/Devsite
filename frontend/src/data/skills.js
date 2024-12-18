@@ -21,6 +21,13 @@ import {
   SiMui,
   SiApple,
   SiFigma,
+  SiNodedotjs,
+  SiExpress,
+  SiGraphql,
+  SiSequelize,
+  SiSupabase,
+  SiMysql,
+  SiSqlite,
 } from "react-icons/si";
 import { BiLogoUnity } from "react-icons/bi";
 import { BsFiletypeSql } from "react-icons/bs";
@@ -54,7 +61,7 @@ const skills = [
             Next.js has elevated my ability to develop modern web applications
             by combining server-side rendering and static site generation. With
             its powerful features like routing, API integrations, and optimized
-            performance, I’ve been able to build SEO-friendly and lightning-fast
+            performance, I've been able to build SEO-friendly and lightning-fast
             applications.
           </div>
         ),
@@ -105,70 +112,73 @@ const skills = [
     category: "Web Development - Back End",
     skills: [
       {
-        name: "React",
-        icon: SiReact,
+        name: "Node.js",
+        icon: SiNodedotjs,
         iconSize: 45,
         desc: () => (
           <div>
-            React has been an integral part of my web development journey,
-            enabling me to build highly dynamic and interactive user interfaces.
-            Its component-based architecture allows me to create reusable UI
-            components, ensuring scalability and maintainability in all my
-            projects.
+            Node.js has been a core component in my back-end development,
+            enabling me to build scalable and efficient web applications. During
+            my academic projects, I used Node.js to create fast, non-blocking
+            server-side applications, allowing for real-time data processing and
+            seamless integration with other back-end technologies.
           </div>
         ),
       },
       {
-        name: "Next.js",
-        icon: SiNextdotjs,
+        name: "Express.js",
+        icon: SiExpress,
         iconSize: 45,
         desc: () => (
           <div>
-            Next.js has elevated my ability to develop modern web applications
-            by combining server-side rendering and static site generation. With
-            its powerful features like routing, API integrations, and optimized
-            performance, I’ve been able to build SEO-friendly and lightning-fast
-            applications.
+            Express.js has been essential in streamlining the development of
+            RESTful APIs in my projects. I used it in several academic web
+            applications to create robust back-end services, allowing for easy
+            routing, middleware management, and seamless integration with
+            databases to deliver dynamic web experiences.
           </div>
         ),
       },
       {
-        name: "Tailwind CSS",
-        icon: SiTailwindcss,
+        name: "GraphQL",
+        icon: SiGraphql,
         iconSize: 45,
         desc: () => (
           <div>
-            Tailwind CSS has transformed the way I approach styling, offering me
-            a utility-first framework to create sleek and responsive designs
-            efficiently. Its flexibility has allowed me to maintain design
-            consistency while keeping my workflow streamlined and intuitive.
+            GraphQL has enhanced my ability to query APIs with more flexibility
+            and efficiency. In academic projects, I implemented GraphQL to allow
+            clients to request only the data they need, optimizing performance
+            and improving the developer experience with fewer requests to the
+            server.
           </div>
         ),
       },
       {
-        name: "Material UI",
-        icon: SiMui,
+        name: "Sequelize",
+        icon: SiSequelize,
         iconSize: 45,
         desc: () => (
           <div>
-            Material UI has been my go-to library for implementing professional
-            and accessible UI components. Its pre-designed components and
-            theming capabilities have accelerated my development process, while
-            ensuring that applications are visually appealing and user-friendly.
+            Sequelize has been my ORM of choice for interacting with relational
+            databases in my back-end projects. I used it extensively in academic
+            applications to simplify complex database queries, manage
+            migrations, and ensure a smooth connection between the application’s
+            business logic and data storage.
           </div>
         ),
       },
       {
-        name: "Craft.js",
-        icon: () => <CustomSVG text="Craft.js" width={85} />,
+        name: "Supabase",
+        icon: SiSupabase,
         iconSize: 45,
         desc: () => (
           <div>
-            Craft.js has provided me with unparalleled flexibility in building
-            custom drag-and-drop editors. I’ve used this library to create
-            intuitive editing experiences, empowering users to design layouts
-            without any coding knowledge, while allowing me to dive deep into
-            customization and optimization.
+            Supabase has been a powerful tool in my academic projects for
+            building real-time applications. I integrated Supabase's features,
+            such as its instant database and authentication services, to deliver
+            scalable back-end solutions that allowed seamless user interaction
+            and efficient data management without the need for complex
+            server-side code.
           </div>
         ),
       },
@@ -483,6 +493,39 @@ const skills = [
         name: "CSS",
         icon: SiCss3,
         iconSize: 45,
+      },
+    ],
+  },
+  {
+    category: "Databases",
+    skills: [
+      {
+        name: "MySQL",
+        icon: SiMysql,
+        iconSize: 45,
+        desc: () => (
+          <div>
+            MySQL has been a cornerstone in my backend development experience,
+            allowing me to design and manage relational databases efficiently.
+            Its robust querying capabilities and reliability have made it a
+            go-to choice for projects requiring structured and scalable data
+            storage.
+          </div>
+        ),
+      },
+      {
+        name: "SQLite",
+        icon: SiSqlite,
+        iconSize: 45,
+        desc: () => (
+          <div>
+            SQLite's lightweight nature and self-contained architecture have
+            made it ideal for quick prototyping and mobile application
+            development. I’ve relied on it for projects where simplicity and
+            portability were key, appreciating its seamless integration and ease
+            of use.
+          </div>
+        ),
       },
     ],
   },
