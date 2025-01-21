@@ -39,7 +39,6 @@ const skills = [
     category: "Web Development - Front End",
     skills: [
       {
-        // TODO: Refine this
         name: "React",
         icon: SiReact,
         iconSize: 45,
@@ -100,17 +99,30 @@ const skills = [
         desc: () => (
           <div>
             Craft.js has provided me with unparalleled flexibility in building
-            custom drag-and-drop editors. I’ve used this library to create
-            intuitive editing experiences, empowering users to design layouts
-            without any coding knowledge, while allowing me to dive deep into
-            customization and optimization.
+            custom drag-and-drop editors. Leveraging the power of Craft.js, the{" "}
+            <Link
+              href="/projects/dine-seal"
+              target="_blank"
+              rel="noopener noreferrer"
+              underline="hover"
+            >
+              <i>
+                <b>DineSeal</b>
+              </i>
+            </Link>{" "}
+            team and I created a user-friendly drag-and-drop editor that
+            empowers restaurant and cafe owners to design and host their own
+            websites effortlessly, without any coding knowledge. This approach
+            not only delivered an intuitive editing experience for users but
+            also allowed me to implement extensive customizations and
+            optimizations, ensuring the platform's functionality and performance
+            met the highest standards.
           </div>
         ),
       },
     ],
   },
   {
-    // TODO: Refine this
     category: "Web Development - Back End",
     skills: [
       {
@@ -163,9 +175,9 @@ const skills = [
           <div>
             Sequelize has been my ORM of choice for interacting with relational
             databases in my back-end projects. I used it extensively in academic
-            applications to simplify complex database queries, manage
-            migrations, and ensure a smooth connection between the application’s
-            business logic and data storage.
+            applications to simplify complex database queries, and ensure a
+            smooth connection between the application's business logic and data
+            storage.
           </div>
         ),
       },

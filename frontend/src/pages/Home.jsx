@@ -17,7 +17,9 @@ import TypeWriter from "typewriter-effect";
 import Carousel from "../components/Carousel";
 
 function Home() {
-  const [currentAccordion, setCurrentAccordion] = useState("Game Development");
+  const [currentAccordion, setCurrentAccordion] = useState(
+    "Web Development - Front End"
+  );
   const [currentSkill, setCurrentSkill] = useState(
     getDefaultSkill(currentAccordion)
   );
@@ -73,7 +75,11 @@ function Home() {
         />
         <TypeWriter
           options={{
-            strings: ["Full-Stack Developer", "Game Developer"],
+            strings: [
+              "Full-Stack Developer",
+              "Game Developer",
+              "iOS Developer",
+            ],
             delay: 35,
             deleteSpeed: 35,
             autoStart: true,
@@ -89,11 +95,11 @@ function Home() {
         <h1 className="text-3xl font-bold">ABOUT ME</h1>
         <p className="text-justify">
           Hello and welcome to my online portfolio! I'm <b>Julian Tan</b>, a
-          passionate <b>Full-Stack Developer</b> and <b>Game Developer</b> with
-          a strong background in building innovative applications and immersive
-          experiences. I bring a unique combination of technical expertise and
-          creative problem-solving skills, honed through years of academic and
-          professional experience.
+          passionate <b>Full-Stack Developer</b>, <b>Game Developer</b>, and{" "}
+          <b>iOS Developer</b> with a strong background in building innovative
+          applications and immersive experiences. I bring a unique combination
+          of technical expertise and creative problem-solving skills, honed
+          through years of academic and professional experience.
           <br />
           <br />I hold a <b>Master of Information Technology</b> from{" "}
           <b>RMIT University</b>, where I achieved a GPA of <b>3.6</b> and
