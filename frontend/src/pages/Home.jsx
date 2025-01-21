@@ -15,6 +15,7 @@ import {
 import { IoMdArrowDropdown } from "react-icons/io";
 import TypeWriter from "typewriter-effect";
 import Carousel from "../components/Carousel";
+import { playAudioOneShot } from "../utils/AudioUtils";
 
 function Home() {
   const [currentAccordion, setCurrentAccordion] = useState(
@@ -195,6 +196,9 @@ function Home() {
                           currentSkill?.name === skill.name ? "" : "text-gray"
                         } hover:text-black transition-colors`}
                         onClick={() => setCurrentSkill(skill)}
+                        onMouseEnter={() =>
+                          playAudioOneShot("/audios/hover.mp3", 0.5)
+                        }
                         style={{ cursor: "pointer" }}
                       >
                         <skill.icon
