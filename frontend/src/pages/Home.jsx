@@ -196,9 +196,9 @@ function Home() {
                           currentSkill?.name === skill.name ? "" : "text-gray"
                         } hover:text-black transition-colors`}
                         onClick={() => setCurrentSkill(skill)}
-                        onMouseEnter={() =>
-                          playAudioOneShot("/audios/hover.mp3", 0.5)
-                        }
+                        // onMouseEnter={() =>
+                        //   playAudioOneShot("/audios/hover.mp3", 0.5)
+                        // }
                         style={{ cursor: "pointer" }}
                       >
                         <skill.icon
