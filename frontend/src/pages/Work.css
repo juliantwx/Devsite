@@ -1,0 +1,10 @@
+/* Overwrite @react-timeline-scribble styling */
+
+.timeline label {
+  outline-color: #e7ded9 !important;
+  background-color: #1d1d1d !important;
+}
+
+.timeline p {
+  background-color: #1d1d1d !important;
+}

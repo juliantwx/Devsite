@@ -10,6 +10,7 @@ import { snapToTop } from "./utils/ScrollUtils";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import Work from "./pages/Work";
 import NotFound from "./pages/NotFound";
 import Maintenance from "./pages/Maintenance";
 
@@ -35,7 +36,7 @@ function App() {
               {/* Routes to all existing pages */}
               <Route path="/home" element={<Home />} />
               {/* TODO: Write the routes for all other pages */}
-              <Route path="/work" element={<Maintenance />} />
+              <Route path="/work" element={<Work />} />
               <Route path="/projects" element={<Maintenance />} />
               <Route path="/projects/box-mania" element={<Maintenance />} />
               <Route
