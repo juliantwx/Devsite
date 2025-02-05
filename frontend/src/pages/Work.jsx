@@ -5,9 +5,9 @@ import "./Work.css";
 
 function Work() {
   return (
-    <div className="min-h-inherit px-6 py-24 sm:py-32 lg:px-8 flex gap-5 flex-col sm:flex-row">
+    <div className="min-h-inherit pt-32 sm:pt-40 pb-24 flex flex-col sm:flex-row justify-center gap-3">
       <h1 className="text-4xl">My Work Experience</h1>
-      <div className="timeline w-[75%] min-w-[450px] mt-1.5">
+      <div className="timeline w-[70%] min-w-[450px] mt-1.5">
         <Timeline>
           {experiences.map((exp, index) => (
             <Event
