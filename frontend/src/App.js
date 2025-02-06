@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
+import Projects from "./pages/Projects";
 import NotFound from "./pages/NotFound";
 import Maintenance from "./pages/Maintenance";
 
@@ -37,7 +38,7 @@ function App() {
               <Route path="/home" element={<Home />} />
               {/* TODO: Write the routes for all other pages */}
               <Route path="/work" element={<Work />} />
-              <Route path="/projects" element={<Maintenance />} />
+              <Route path="/projects" element={<Projects />} />
               <Route path="/projects/box-mania" element={<Maintenance />} />
               <Route
                 path="/projects/go-gold-castle"
