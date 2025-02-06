@@ -17,7 +17,7 @@ function ProjectPanel({ project }) {
         sx={{ height: 150, width: 250 }}
         image="/images/SiteIconBlack.png"
       />
-      <CardContent>sadsads</CardContent>
+      <CardContent>{project}</CardContent>
     </Card>
   );
 }
