@@ -39,11 +39,16 @@ function App() {
               {/* TODO: Write the routes for all other pages */}
               <Route path="/work" element={<Work />} />
               <Route path="/projects" element={<Projects />} />
-              <Route path="/projects/box-mania" element={<Maintenance />} />
+              <Route path="/projects/claw-stars" element={<Maintenance />} />
+              <Route path="/projects/color-launch" element={<Maintenance />} />
               <Route
                 path="/projects/go-gold-castle"
                 element={<Maintenance />}
               />
+              <Route path="/projects/trapped" element={<Maintenance />} />
+              <Route path="/projects/survive!" element={<Maintenance />} />
+              <Route path="/projects/box-mania" element={<Maintenance />} />
+              <Route path="/projects/traceur" element={<Maintenance />} />
               <Route
                 path="/projects/backpackers-buddy"
                 element={<Maintenance />}

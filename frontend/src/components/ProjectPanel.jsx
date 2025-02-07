@@ -50,6 +50,7 @@ function ProjectPanel({ project }) {
           src={project.mediaURL}
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
           loop
+          muted
         />
       </CardMedia>
       <CardContent>
