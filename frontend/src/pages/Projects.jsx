@@ -7,8 +7,13 @@ function Projects() {
   const [projects, setProjects] = useState(projectData);
 
   return (
-    <div className="min-h-inherit px-20 pt-32 sm:pt-40 pb-24 flex flex-col sm:flex-row justify-center gap-3">
-      <Grid2 container spacing={3.5}>
+    <div className="min-h-inherit px-20 pt-32 sm:pt-40 pb-24">
+      <Grid2
+        container
+        columnSpacing={10}
+        rowSpacing={7}
+        sx={{ width: "auto", justifyContent: "space-evenly" }}
+      >
         {projects.map((project, index) => (
           <Grid2 item key={index}>
             <ProjectPanel project={project} />
