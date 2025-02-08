@@ -9,6 +9,30 @@ const projects = [
     mediaURL: "/videos/GoGoldCastle.webm",
     pageURL: "/projects/claw-stars",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non ultrices ipsum, ut laoreet erat. Aenean lobortis nulla ac sapien blandit dignissim. Nunc sagittis vel felis in aliquet. Aliquam turpis ex, aliquet cursus fringilla in, posuere non elit. Morbi placerat justo odio, gravida consectetur lectus dictum vitae. Nunc congue tristique.",
+    tags: [
+      "Bill",
+      "asd",
+      "Bill",
+      "asd",
+      "Bill",
+      "asd",
+      "Bill",
+      "asd",
+      "Bill",
+      "asd",
+      "Bill",
+      "asd",
+      "Bill",
+      "asd",
+      "Bill",
+      "asd",
+      "Bill",
+      "asd",
+      "Bill",
+      "asd",
+      "Bill",
+      "asd",
+    ],
   },
   {
     name: "Color Launch",
@@ -16,6 +40,7 @@ const projects = [
     mediaURL: "/videos/GoGoldCastle.webm",
     pageURL: "/projects/color-launch",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non ultrices ipsum, ut laoreet erat. Aenean lobortis nulla ac sapien blandit dignissim. Nunc sagittis vel felis in aliquet. Aliquam turpis ex, aliquet cursus fringilla in, posuere non elit. Morbi placerat justo odio, gravida consectetur lectus dictum vitae. Nunc congue tristique.",
+    tags: ["Bill", "asd"],
   },
   {
     name: "Go Gold Castle",
@@ -23,6 +48,7 @@ const projects = [
     mediaURL: "/videos/GoGoldCastle.webm",
     pageURL: "/projects/go-gold-castle",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non ultrices ipsum, ut laoreet erat. Aenean lobortis nulla ac sapien blandit dignissim. Nunc sagittis vel felis in aliquet. Aliquam turpis ex, aliquet cursus fringilla in, posuere non elit. Morbi placerat justo odio, gravida consectetur lectus dictum vitae. Nunc congue tristique.",
+    tags: ["Bill", "asd"],
   },
   {
     name: "Trapped",
@@ -30,6 +56,7 @@ const projects = [
     mediaURL: "/videos/GoGoldCastle.webm",
     pageURL: "/projects/trapped",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non ultrices ipsum, ut laoreet erat. Aenean lobortis nulla ac sapien blandit dignissim. Nunc sagittis vel felis in aliquet. Aliquam turpis ex, aliquet cursus fringilla in, posuere non elit. Morbi placerat justo odio, gravida consectetur lectus dictum vitae. Nunc congue tristique.",
+    tags: ["Bill", "asd"],
   },
   {
     name: "Survive!",
@@ -37,6 +64,7 @@ const projects = [
     mediaURL: "/videos/GoGoldCastle.webm",
     pageURL: "/projects/survive!",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non ultrices ipsum, ut laoreet erat. Aenean lobortis nulla ac sapien blandit dignissim. Nunc sagittis vel felis in aliquet. Aliquam turpis ex, aliquet cursus fringilla in, posuere non elit. Morbi placerat justo odio, gravida consectetur lectus dictum vitae. Nunc congue tristique.",
+    tags: ["Bill", "asd"],
   },
   {
     name: "BoxMania",
@@ -44,6 +72,7 @@ const projects = [
     mediaURL: "/videos/GoGoldCastle.webm",
     pageURL: "/projects/box-mania",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non ultrices ipsum, ut laoreet erat. Aenean lobortis nulla ac sapien blandit dignissim. Nunc sagittis vel felis in aliquet. Aliquam turpis ex, aliquet cursus fringilla in, posuere non elit. Morbi placerat justo odio, gravida consectetur lectus dictum vitae. Nunc congue tristique.",
+    tags: ["Bill", "asd"],
   },
   {
     name: "Traceur",
@@ -51,6 +80,7 @@ const projects = [
     mediaURL: "/videos/GoGoldCastle.webm",
     pageURL: "/projects/traceur",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non ultrices ipsum, ut laoreet erat. Aenean lobortis nulla ac sapien blandit dignissim. Nunc sagittis vel felis in aliquet. Aliquam turpis ex, aliquet cursus fringilla in, posuere non elit. Morbi placerat justo odio, gravida consectetur lectus dictum vitae. Nunc congue tristique.",
+    tags: ["Bill", "asd"],
   },
 ];
 

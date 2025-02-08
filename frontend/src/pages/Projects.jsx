@@ -12,7 +12,10 @@ function Projects() {
         container
         columnSpacing={10}
         rowSpacing={7}
-        sx={{ maxWidth: "1250px", justifyContent: "space-evenly" }}
+        sx={{
+          maxWidth: "1250px",
+          justifyContent: "space-evenly",
+        }}
       >
         {projects.map((project, index) => (
           <Grid2 item key={index}>
