@@ -7,7 +7,6 @@ function ProjectPanel({ project }) {
 
   useEffect(() => {
     if (isViewing && videoRef.current) {
-      videoRef.current.volume = 0.15;
       videoRef.current.play().catch((error) => {
         console.warn("Autoplay prevented:", error);
       });
@@ -54,26 +53,30 @@ function ProjectPanel({ project }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          backgroundColor: "#1d1d1d",
         }}
       >
         {isViewing && project.videoURL ? (
           <video
             ref={videoRef}
             src={project.videoURL}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            style={{
+              height: "100%",
+              width: project.videoWidth ?? "100%",
+              objectFit: "cover",
+            }}
             loop
             muted
+            preload="auto"
           />
         ) : (
           <img
             src={project.thumbnailURL}
             alt={project.name}
             style={{
-              maxWidth: "150px",
-              maxHeight: "150px",
+              height: "100%",
+              width: project.thumbnailWidth ?? "100%",
               objectFit: "cover",
-              display: "block",
-              margin: "auto",
             }}
           />
         )}
