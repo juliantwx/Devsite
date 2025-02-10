@@ -21,7 +21,6 @@ function ProjectPanel({ project }) {
     setIsViewing(false);
     if (videoRef.current) {
       videoRef.current.pause();
-      videoRef.current.currentTime = 0;
     }
   };
 
@@ -51,13 +50,20 @@ function ProjectPanel({ project }) {
         sx={{
           height: 200,
           width: 350,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
           backgroundColor: "#1d1d1d",
         }}
       >
-        {isViewing && project.videoURL ? (
+        <div
+          style={{
+            position: "relative",
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {/* Video in the background */}
           <video
             ref={videoRef}
             src={project.videoURL}
@@ -70,17 +76,21 @@ function ProjectPanel({ project }) {
             muted
             preload="auto"
           />
-        ) : (
+
+          {/* Image overlay, fades out on hover */}
           <img
             src={project.thumbnailURL}
             alt={project.name}
             style={{
+              position: "absolute",
               height: "100%",
               width: project.thumbnailWidth ?? "100%",
               objectFit: "cover",
+              transition: "opacity 0.3s ease-in-out",
+              opacity: isViewing ? 0 : 1,
             }}
           />
-        )}
+        </div>
       </CardMedia>
       <CardContent>
         <h1 className="text-lg">{project.name}</h1>
