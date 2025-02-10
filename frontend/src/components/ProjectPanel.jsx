@@ -33,6 +33,7 @@ function ProjectPanel({ project }) {
     <Card
       sx={{
         width: 350,
+        height: 428,
         borderRadius: "10px",
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
         transition: "transform 0.15s ease-in-out",
