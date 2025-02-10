@@ -83,17 +83,12 @@ function ProjectPanel({ project }) {
       </CardMedia>
       <CardContent>
         <h1 className="text-lg">{project.name}</h1>
-        <p className="text-xs italic">{project.type}</p>
-        <p className="py-4 text-sm text-justify">
-          {project.desc.length > 250
-            ? `${project.desc.slice(0, 250)}...`
-            : project.desc}
-        </p>
+        <p className="pb-4 text-xs italic">{project.type}</p>
+        <p className="text-sm text-justify line-clamp-4">{project.desc}</p>
         {project.tags && (
-          <div className="flex flex-row gap-2 text-xs text-gray italic">
-            <p>Tags:</p>
-            <p>{project.tags.join(", ")}</p>
-          </div>
+          <p className="pt-4 text-xs text-gray italic line-clamp-2">
+            Tags: {project.tags.join(", ")}
+          </p>
         )}
       </CardContent>
     </Card>
