@@ -1,25 +1,30 @@
-import React, { useRef, useState, useEffect } from "react";
-import { Card, CardMedia, CardContent } from "@mui/material";
+import React, { useRef, useState } from "react";
+import { Card, CardMedia, CardContent, CircularProgress } from "@mui/material";
 
 function ProjectPanel({ project }) {
   const videoRef = useRef(null);
   const [isViewing, setIsViewing] = useState(false);
-
-  useEffect(() => {
-    if (isViewing && videoRef.current) {
-      videoRef.current.play().catch((error) => {
-        console.warn("Autoplay prevented:", error);
-      });
-    }
-  }, [isViewing]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleMouseEnter = () => {
-    setIsViewing(true);
+    if (videoRef.current) {
+      setIsViewing(true);
+      setIsLoading(true);
+      videoRef.current
+        .play()
+        .then(() => {
+          setIsLoading(false); // Hide spinner when video starts playing
+        })
+        .catch((error) => {
+          console.warn("Autoplay prevented:", error);
+          setIsLoading(false);
+        });
+    }
   };
 
   const handleMouseLeave = () => {
-    setIsViewing(false);
     if (videoRef.current) {
+      setIsViewing(false);
       videoRef.current.pause();
     }
   };
@@ -76,6 +81,8 @@ function ProjectPanel({ project }) {
             muted
             preload="auto"
           />
+
+          {isLoading && <CircularProgress style={{ position: "absolute" }} />}
 
           {/* Image overlay, fades out on hover */}
           <img
