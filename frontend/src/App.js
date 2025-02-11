@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
 import Projects from "./pages/Projects";
+import Project from "./pages/Project";
 import NotFound from "./pages/NotFound";
 import Maintenance from "./pages/Maintenance";
 
@@ -39,20 +40,14 @@ function App() {
               {/* TODO: Write the routes for all other pages */}
               <Route path="/work" element={<Work />} />
               <Route path="/projects" element={<Projects />} />
-              <Route path="/projects/claw-stars" element={<Maintenance />} />
-              <Route path="/projects/color-launch" element={<Maintenance />} />
-              <Route
-                path="/projects/go-gold-castle"
-                element={<Maintenance />}
-              />
-              <Route path="/projects/trapped" element={<Maintenance />} />
-              <Route path="/projects/survive!" element={<Maintenance />} />
-              <Route path="/projects/box-mania" element={<Maintenance />} />
-              <Route path="/projects/traceur" element={<Maintenance />} />
-              <Route
-                path="/projects/backpackers-buddy"
-                element={<Maintenance />}
-              />
+              <Route path="/projects/claw-stars" element={<Project />} />
+              <Route path="/projects/color-launch" element={<Project />} />
+              <Route path="/projects/go-gold-castle" element={<Project />} />
+              <Route path="/projects/trapped" element={<Project />} />
+              <Route path="/projects/survive!" element={<Project />} />
+              <Route path="/projects/box-mania" element={<Project />} />
+              <Route path="/projects/traceur" element={<Project />} />
+              <Route path="/projects/backpackers-buddy" element={<Project />} />
               {/* Reroute all non-existing routes to the 404 page */}
               <Route path="*" element={<NotFound />} />
             </>

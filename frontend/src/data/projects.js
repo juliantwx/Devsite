@@ -1,6 +1,5 @@
 // This file contains the details of projects that I've worked on over my development journey.
 
-// TODO: Update descriptions
 // TODO: Add all projects' details
 const projects = [
   {

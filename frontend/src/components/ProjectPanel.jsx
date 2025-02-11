@@ -30,7 +30,11 @@ function ProjectPanel({ project }) {
   };
 
   const handleOnClick = () => {
-    window.open(`${project.pageURL}`, "_blank", "noopener,noreferrer");
+    // Open a new tab displaying the generic project page
+    const newTab = window.open(project.pageURL, "_blank");
+
+    // Set the project data of the newly created tab
+    if (newTab) newTab.projectData = project;
   };
 
   return (
