@@ -11,10 +11,10 @@ function Project() {
   }, []);
 
   return (
-    <div className="min-h-inherit py-32 flex justify-center">
+    <div className="min-h-inherit py-36 flex justify-center">
       {project && (
         <div className="flex justify-center flex-col w-[75%] sm:w-[50%]">
-          <div className="relative bg-black rounded-xl overflow-hidden">
+          <div className="relative bg-black shadow-[8px_8px_10px_rgba(0,0,0,0.3)] rounded-xl overflow-hidden">
             <video
               src={project.videoURL}
               style={{
