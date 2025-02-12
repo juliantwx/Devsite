@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
+import projects from "../data/projects";
 
 function Project() {
   const [projectData, setProjectData] = useState(null);
 
   useEffect(() => {
-    // Retrieve project data from opening tab
-    const data = window.opener?.projectData;
-    if (data) setProjectData(data);
+    // Retrieve project data based on path name
+    const pathName = window.location.pathname;
+    const project = projects.find((p) => p.pageURL === pathName);
+
+    if (project) setProjectData(project);
   }, []);
 
   return (
