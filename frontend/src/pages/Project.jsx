@@ -14,7 +14,7 @@ function Project() {
     <div className="min-h-inherit py-32 flex justify-center">
       {project && (
         <div className="flex justify-center flex-col w-[75%] sm:w-[50%]">
-          <div className="relative rounded-xl overflow-hidden">
+          <div className="relative bg-black rounded-xl overflow-hidden">
             <video
               src={project.videoURL}
               style={{
@@ -51,7 +51,10 @@ function Project() {
             </p>
           </div>
           <p className="text-lg text-justify">{project.desc}</p>
-          <div></div>
+          {/* <div className="my-7">
+            <p className="text-3xl">Contributions</p>
+            <p className=""></p>
+          </div> */}
         </div>
       )}
     </div>
