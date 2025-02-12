@@ -1,8 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import projects from "../data/projects";
 
 function Project() {
+  const videoRef = useRef(null);
   const [project, setProject] = useState(null);
+  const [isViewing, setIsViewing] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleMouseEnter = () => {
+    if (videoRef.current) {
+      setIsViewing(true);
+      setIsLoading(true);
+      videoRef.current
+        .play()
+        .then(() => {
+          setIsLoading(false); // Hide spinner when video starts playing
+        })
+        .catch((error) => {
+          console.warn("Autoplay prevented:", error);
+          setIsLoading(false);
+        });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (videoRef.current) {
+      setIsViewing(false);
+      videoRef.current.pause();
+    }
+  };
 
   useEffect(() => {
     // Retrieve project data based on path name
@@ -14,10 +40,16 @@ function Project() {
     <div className="min-h-inherit py-36 flex justify-center">
       {project && (
         <div className="flex justify-center flex-col w-[75%] sm:w-[50%]">
-          <div className="relative bg-black shadow-[8px_8px_10px_rgba(0,0,0,0.3)] rounded-xl overflow-hidden">
+          <div
+            className="relative w-full aspect-[16/9] flex justify-center bg-black shadow-[8px_8px_10px_rgba(0,0,0,0.3)] rounded-xl overflow-hidden"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             <video
+              ref={videoRef}
               src={project.videoURL}
               style={{
+                position: "absolute",
                 height: "100%",
                 width: project.videoWidth ?? "100%",
                 objectFit: "cover",
@@ -39,7 +71,7 @@ function Project() {
                 width: project.thumbnailWidth ?? "100%",
                 objectFit: "cover",
                 transition: "opacity 0.3s ease-in-out",
-                opacity: 1,
+                opacity: isViewing ? 0 : 1,
               }}
             />
           </div>
