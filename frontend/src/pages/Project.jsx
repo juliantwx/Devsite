@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import projects from "../data/projects";
+import { CircularProgress } from "@mui/material";
 
 function Project() {
   const videoRef = useRef(null);
@@ -41,7 +42,7 @@ function Project() {
       {project && (
         <div className="flex justify-center flex-col w-[75%] sm:w-[50%]">
           <div
-            className="relative w-full aspect-[16/9] flex justify-center bg-black shadow-[8px_8px_10px_rgba(0,0,0,0.3)] rounded-xl overflow-hidden"
+            className="relative w-full aspect-[16/9] flex justify-center items-center bg-black shadow-[8px_8px_10px_rgba(0,0,0,0.3)] rounded-xl overflow-hidden"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
@@ -60,6 +61,18 @@ function Project() {
               playsInline
               preload="auto"
             />
+
+            {isLoading && (
+              <CircularProgress
+                style={{
+                  position: "absolute",
+                  minWidth: "25px",
+                  minHeight: "25px",
+                  width: "80px",
+                  height: "80px",
+                }}
+              />
+            )}
 
             {/* Image overlay, fades out on hover */}
             <img
