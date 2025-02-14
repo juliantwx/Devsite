@@ -89,7 +89,7 @@ function Project() {
             />
           </div>
           <div className="my-4 sm:my-7">
-            <h1 className="text-3xl sm:text-5xl">{project.name}</h1>
+            <h1 className="mb-1 text-3xl sm:text-5xl">{project.name}</h1>
             <p className="mx-1 text-sm sm:text-base italic opacity-[0.7]">
               {project.type}
             </p>
@@ -99,8 +99,10 @@ function Project() {
           </div>
           <p className="text-base sm:text-lg text-justify">{project.desc}</p>
           <div className="my-4 sm:my-7">
-            <p className="text-xl sm:text-3xl">Contributions</p>
-            <p className="text-base sm:text-lg text-justify"></p>
+            <p className="mb-1 text-xl sm:text-3xl">Contributions</p>
+            <ul className="list-disc pl-10 space-y-2 text-base sm:text-lg text-justify">{project.contributions.map((con, index) => (
+              <li key={index}>{con}</li>
+            ))}</ul>
           </div>
         </div>
       )}

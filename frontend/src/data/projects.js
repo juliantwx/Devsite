@@ -16,10 +16,26 @@ const projects = [
       "Dev2Dev",
       "Appsflyer",
       "API Integration",
+      "User Interface",
       "Unity Tool Development",
       "Localisation",
       "QA Testing",
     ],
+    contributions: [
+      "Work closely with game designers, game artists, backend developers, and fellow Unity programmers in a collaborative effort to develop new content and improve the overall experience for our players.",
+
+"Implement new LiveOps, ranging from in-game events to content updates and localization.",
+
+"Implemented User Interfaces based on the designs that were provided by the art and design team.",
+
+"Integrate 3rd party analytical solutions such as DevToDev to help our designers pinpoint lackluster events, sales, and mechanics.",
+
+"Create Unity tools and wrote extension methods for frequently used variables to increase our development team's productivity.",
+
+"Quickly produce prototypes for requested mechanics.",
+
+"QA testing and bug fixing.",
+    ]
   },
   {
     name: "Color Launch",
@@ -36,12 +52,36 @@ const projects = [
       "GitHub",
       "Procedural Generation",
       "Cloud Saving",
+      "User Interface",
       "In-Game Advertisements",
       "Notification System",
       "Game Art",
       "Game Design",
       "QA Testing",
     ],
+    contributions: [
+      "Integrating Google Play plugin to introduce cloud saving system, in-app purchases, leaderboards, and achievements into the project.",
+
+"Save system that utilizes cloud and local save. Local save serves as a fallback if cloud saving is unavailable. Locally stored data will be uploaded to the cloud whenever possible.",
+
+"Procedural generation for obstacle courses.",
+
+"Designed and implemented the User Interface",
+
+"Scaling for different mobile screen sizes.",
+
+"Change entire game's visuals based on equipped color palette.",
+
+"Time and ads based reward systems.",
+
+"Notification system.",
+
+"Laser shader.",
+
+"Game art.",
+
+"Game design."
+    ]
   },
   {
     name: "Go Gold Castle",
@@ -58,6 +98,15 @@ const projects = [
       "Online Multiplayer Development",
       "QA Testing",
     ],
+    contributions: [
+      "My main responsibility was to convert Go Gold Castle into an online game using Steamworks' multiplayer feature.",
+
+"Refactor code base for core mechanics.",
+
+"Add new characters into the game's roster, including their skills, animations, and UI.",
+
+"Writing documentation for future references, system optimization, and bug fixing.",
+    ]
   },
   {
     name: "Trapped",
@@ -67,6 +116,7 @@ const projects = [
     pageURL: "/projects/trapped",
     desc: "You've been Trapped in a strange facility with no idea how to escape. Strange creatures lurk in the shadows, and danger is everywhere. Armed with an experimental gun and unlimited ammo, you'll have to fight your way through environmental hazards and relentless enemies. Think fast, shoot faster, and break free in this intense 2D platform shooter.",
     tags: ["Unity", "C#", "GitHub", "Enemy AI Development", "QA Testing"],
+    contributions: ["Designed and programmed every enemy, including their behaviors and interactions, within the game."]
   },
   {
     name: "Survive!",
