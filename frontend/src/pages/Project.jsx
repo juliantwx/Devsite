@@ -66,8 +66,8 @@ function Project() {
               <CircularProgress
                 style={{
                   position: "absolute",
-                  minWidth: "25px",
-                  minHeight: "25px",
+                  minWidth: "15px",
+                  minHeight: "15px",
                   width: "80px",
                   height: "80px",
                 }}
@@ -88,18 +88,20 @@ function Project() {
               }}
             />
           </div>
-          <div className="my-7">
-            <h1 className="text-5xl">{project.name}</h1>
-            <p className="mx-1 italic opacity-[0.7]">{project.type}</p>
-            <p className="mx-1 italic opacity-[0.7]">
+          <div className="my-4 sm:my-7">
+            <h1 className="text-3xl sm:text-5xl">{project.name}</h1>
+            <p className="mx-1 text-sm sm:text-base italic opacity-[0.7]">
+              {project.type}
+            </p>
+            <p className="mx-1 text-sm sm:text-base italic opacity-[0.7]">
               {project.tags.join(", ")}
             </p>
           </div>
-          <p className="text-lg text-justify">{project.desc}</p>
-          {/* <div className="my-7">
-            <p className="text-3xl">Contributions</p>
-            <p className=""></p>
-          </div> */}
+          <p className="text-base sm:text-lg text-justify">{project.desc}</p>
+          <div className="my-4 sm:my-7">
+            <p className="text-xl sm:text-3xl">Contributions</p>
+            <p className="text-base sm:text-lg text-justify"></p>
+          </div>
         </div>
       )}
     </div>
