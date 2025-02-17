@@ -92,7 +92,7 @@ function Home() {
       </Stack>
 
       {/* About Me */}
-      <Stack className="p-5 w-[85%]" gap={2}>
+      <Stack className="p-5 w-[75%]" gap={2}>
         <h1 className="text-3xl font-bold">ABOUT ME</h1>
         <p className="text-justify">
           Hello and welcome to my online portfolio! I'm <b>Julian Tan</b>, a
@@ -159,7 +159,7 @@ function Home() {
       </Stack>
 
       {/* Skills and Experiences */}
-      <Stack className="p-5 w-[85%]">
+      <Stack className="p-5 w-[75%]">
         <h1 className="text-3xl font-bold mb-5">SKILL & EXPERIENCES</h1>
         {/* Create an accordion for each skill category */}
         {skills.map((skillCategory) => (
@@ -217,7 +217,7 @@ function Home() {
       </Stack>
 
       {/* Reviews */}
-      <Stack className="p-5 w-[85%]" gap={2}>
+      <Stack className="p-5 w-[75%]" gap={2}>
         <h1 className="text-3xl font-bold">TESTIMONIALS</h1>
         <Carousel
           items={reviews.map((review, index) => (
