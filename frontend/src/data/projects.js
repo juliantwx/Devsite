@@ -1,6 +1,5 @@
 // This file contains the details of projects that I've worked on over my development journey.
 
-// TODO: Add all projects' details
 const projects = [
   {
     name: "Claw Stars",
@@ -22,20 +21,14 @@ const projects = [
       "QA Testing",
     ],
     contributions: [
-      "Work closely with game designers, game artists, backend developers, and fellow Unity programmers in a collaborative effort to develop new content and improve the overall experience for our players.",
-
-"Implement new LiveOps, ranging from in-game events to content updates and localization.",
-
-"Implemented User Interfaces based on the designs that were provided by the art and design team.",
-
-"Integrate 3rd party analytical solutions such as DevToDev to help our designers pinpoint lackluster events, sales, and mechanics.",
-
-"Create Unity tools and wrote extension methods for frequently used variables to increase our development team's productivity.",
-
-"Quickly produce prototypes for requested mechanics.",
-
-"QA testing and bug fixing.",
-    ]
+      "Collaborated closely with game designers, artists, backend developers, and fellow Unity programmers to develop new content and enhance the player experience.",
+      "Developed and launched LiveOps content, including in-game events, content updates, and localization improvements, to maintain player engagement.",
+      "Implemented UI/UX designs from the art and design team into functional, polished user interfaces within Unity.",
+      "Integrated third-party analytics platforms such as DevToDev, enabling data-driven decisions to optimize event performance, sales, and gameplay mechanics.",
+      "Built custom Unity tools and extension methods to streamline development workflows and improve team efficiency.",
+      "Rapidly prototyped and iterated on new gameplay mechanics based on design requirements.",
+      "Conducted QA testing and resolved bugs to ensure a stable and high-quality player experience.",
+    ],
   },
   {
     name: "Color Launch",
@@ -60,28 +53,18 @@ const projects = [
       "QA Testing",
     ],
     contributions: [
-      "Integrating Google Play plugin to introduce cloud saving system, in-app purchases, leaderboards, and achievements into the project.",
-
-"Save system that utilizes cloud and local save. Local save serves as a fallback if cloud saving is unavailable. Locally stored data will be uploaded to the cloud whenever possible.",
-
-"Procedural generation for obstacle courses.",
-
-"Designed and implemented the User Interface",
-
-"Scaling for different mobile screen sizes.",
-
-"Change entire game's visuals based on equipped color palette.",
-
-"Time and ads based reward systems.",
-
-"Notification system.",
-
-"Laser shader.",
-
-"Game art.",
-
-"Game design."
-    ]
+      "Integrated the Google Play plugin to implement cloud saving, in-app purchases, leaderboards, and achievements, enhancing player retention and monetization.",
+      "Developed a hybrid save system that supports both cloud and local storage, ensuring player progress is preserved even when cloud saving is unavailable, with automatic cloud sync when connectivity is restored.",
+      "Implemented procedural generation algorithms to create dynamic and engaging obstacle courses, ensuring varied gameplay experiences.",
+      "Designed and developed the game's User Interface (UI), focusing on intuitive navigation and player accessibility.",
+      "Ensured responsive scaling and layout adjustments to support a wide range of mobile screen sizes and resolutions.",
+      "Created a dynamic visual system allowing the game's aesthetics to adapt based on the player's equipped color palette.",
+      "Implemented time-based and ad-based reward systems to drive player engagement and increase monetization opportunities.",
+      "Developed a notification system to re-engage players and promote in-game events and updates.",
+      "Created a custom laser shader to achieve unique visual effects and enhance the game's graphical quality.",
+      "Designed and created all game art assets, establishing the visual identity and ensuring a cohesive presentation throughout the project.",
+      "Independently designed the game's core mechanics and systems, balancing gameplay to deliver a polished and engaging player experience.",
+    ],
   },
   {
     name: "Go Gold Castle",
@@ -99,14 +82,11 @@ const projects = [
       "QA Testing",
     ],
     contributions: [
-      "My main responsibility was to convert Go Gold Castle into an online game using Steamworks' multiplayer feature.",
-
-"Refactor code base for core mechanics.",
-
-"Add new characters into the game's roster, including their skills, animations, and UI.",
-
-"Writing documentation for future references, system optimization, and bug fixing.",
-    ]
+      "Led the transition of Go Gold Castle to an online multiplayer experience by integrating Steamworks networking features.",
+      "Refactored the core game systems to improve performance, readability, and scalability.",
+      "Expanded the character roster by designing and implementing new characters, including their unique abilities, animations, and UI elements.",
+      "Authored comprehensive documentation to support future development, optimize system performance, and facilitate bug fixes.",
+    ],
   },
   {
     name: "Trapped",
@@ -116,7 +96,9 @@ const projects = [
     pageURL: "/projects/trapped",
     desc: "You've been Trapped in a strange facility with no idea how to escape. Strange creatures lurk in the shadows, and danger is everywhere. Armed with an experimental gun and unlimited ammo, you'll have to fight your way through environmental hazards and relentless enemies. Think fast, shoot faster, and break free in this intense 2D platform shooter.",
     tags: ["Unity", "C#", "GitHub", "Enemy AI Development", "QA Testing"],
-    contributions: ["Designed and programmed every enemy, including their behaviors and interactions, within the game."]
+    contributions: [
+      "Designed and programmed every enemy, including their behaviors and interactions, within the game.",
+    ],
   },
   {
     name: "Survive!",
@@ -138,6 +120,16 @@ const projects = [
       "Game Design",
       "QA Testing",
     ],
+    contributions: [
+      "Developed core game systems, including local save, currency, scoring, and shop systems, ensuring smooth game progression and player data management.",
+      "Implemented procedural platform generation, spawning logic, and dynamic level elements like moving platforms and teleporters to enhance gameplay variety.",
+      "Created various player-centric mechanics such as knockback effects, color changes, a health bar, and scene transitions to improve visual feedback and player experience.",
+      "Programmed interactive systems like laser shooter AI, rotating arrow indicators, and a guiding arrow to help players navigate the environment and overcome challenges.",
+      "Built the opening scene, along with a generator system that activates game components, ensuring smooth startup and gameplay flow.",
+      "Designed and implemented the user interface, tying together game systems with clear, functional menus and HUD elements.",
+      "Designed and created visual assets, including the main character, environment elements (platforms, walls), interactive objects (teleporter, shop stand, laser shooter), and the credits statue.",
+      "Developed the majority of the user interface visuals, ensuring visual consistency across menus and HUD components.",
+    ],
   },
   {
     name: "BoxMania",
@@ -157,6 +149,12 @@ const projects = [
       "Online Multiplayer",
       "Game Design",
     ],
+    contributions: [
+      "Developed a multiplayer system with matchmaking functionality using Photon Unity Networking (PUN), enabling seamless online gameplay.",
+      "Integrated Facebook SDK to implement social features such as sharing and player invitations.",
+      "Built a robust local save system to ensure player data persistence.",
+      "Designed core gameplay systems and mechanics, shaping the overall player experience.",
+    ],
   },
   {
     name: "Traceur",
@@ -166,6 +164,10 @@ const projects = [
     pageURL: "/projects/traceur",
     desc: "A fast-paced runner where players must rely on instinct to navigate perilous environments. Race toward your objective while evading deadly traps and outrunning relentless enemies. Every decision leaves a lasting impact, shaping the challenges you'll face further down the road.",
     tags: ["Unity", "C#", "GitHub", "User Interface", "QA Testing"],
+    contributions: [
+      "Sole UI programmer, responsible for developing the user interface for Traceur in close collaboration with the UI artist and game designer.",
+      "Worked with the audio programmer to synchronize audio cues with in-game events, such as triggering countdown sounds alongside countdown animations.",
+    ],
   },
 ];
 
