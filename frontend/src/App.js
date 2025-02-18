@@ -37,9 +37,9 @@ function App() {
               <Route path="/" element={<Navigate to="/home" />} />
               {/* Routes to all existing pages */}
               <Route path="/home" element={<Home />} />
-              {/* TODO: Write the routes for all other pages */}
               <Route path="/work" element={<Work />} />
               <Route path="/projects" element={<Projects />} />
+              {/* Routes to projects' page */}
               <Route path="/projects/claw-stars" element={<Project />} />
               <Route path="/projects/color-launch" element={<Project />} />
               <Route path="/projects/go-gold-castle" element={<Project />} />
@@ -47,7 +47,14 @@ function App() {
               <Route path="/projects/survive!" element={<Project />} />
               <Route path="/projects/box-mania" element={<Project />} />
               <Route path="/projects/traceur" element={<Project />} />
+              <Route path="/projects/today-i-learned" element={<Project />} />
+              <Route
+                path="/projects/alice-electronic-bike-shop"
+                element={<Project />}
+              />
+              <Route path="/projects/soil" element={<Project />} />
               <Route path="/projects/backpackers-buddy" element={<Project />} />
+              <Route path="/projects/dine-seal" element={<Project />} />
               {/* Reroute all non-existing routes to the 404 page */}
               <Route path="*" element={<NotFound />} />
             </>
