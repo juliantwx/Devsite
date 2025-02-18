@@ -378,7 +378,6 @@ const skills = [
     ],
   },
   {
-    // TODO: Refine this
     category: "Databases",
     skills: [
       {

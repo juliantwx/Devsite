@@ -4,10 +4,9 @@ const projects = [
   {
     name: "DineSeal",
     type: "Web Application",
-    thumbnailURL: "/images/DineSeal.jpg", // TODO: Add thumbnail for DineSeal
-    videoURL: "/videos/DineSeal.mp4", // TODO: Add video for DineSeal
+    thumbnailURL: "/images/DineSeal.jpg",
+    videoURL: "/videos/DineSeal.mp4",
     pageURL: "/projects/dine-seal",
-    // TODO: Update description for DineSeal
     desc: "A web platform designed to empower restaurants and cafés to establish their online presence with ease. The project involved creating a drag-and-drop website builder using React.js integrated with Craft.js for dynamic front-end editing. We utilized Next.js for seamless API integration, ensuring smooth performance and scalability.",
     tags: [
       "Next.js",
@@ -30,8 +29,9 @@ const projects = [
   {
     name: "Backpackers Buddy",
     type: "iOS Application",
-    thumbnailURL: "/images/BackpackersBuddy.jpg", // TODO: Add thumbnail for Backpackers Buddy
-    videoURL: "/videos/BackpackersBuddy.mp4", // TODO: Add video for Backpackers Buddy
+    thumbnailURL: "/images/BackpackersBuddy.jpg",
+    videoURL: "/videos/BackpackersBuddy.mp4",
+    videoWidth: "30%",
     pageURL: "/projects/backpackers-buddy",
     desc: "An iOS application that enables users to search for nearby lodgings and points of interest based on a chosen location. The app leverages location-based services and mapping technologies to provide an intuitive and seamless user experience.",
     tags: [
@@ -59,8 +59,8 @@ const projects = [
   {
     name: "SOIL",
     type: "Web Application",
-    thumbnailURL: "/images/SOIL.jpg", // TODO: Add thumbnail for SOIL
-    videoURL: "/videos/SOIL.mp4", // TODO: Add video for SOIL
+    thumbnailURL: "/images/SOIL.jpg",
+    videoURL: "/videos/SOIL.mp4",
     pageURL: "/projects/soil",
     desc: "An e-commerce web application with a comprehensive set of features designed to enhance both user and admin experiences. The application includes shopping cart functionality, user registration and authentication, profile management, a review system, and real-time admin tools for content and engagement management.",
     tags: [
@@ -87,8 +87,8 @@ const projects = [
   {
     name: "Alice's Electronic Bike Shop",
     type: "Web Application",
-    thumbnailURL: "/images/AEBS.jpg", // TODO: Add thumbnail for AEBS
-    videoURL: "/videos/AEBS.mp4", // TODO: Add video for AEBS
+    thumbnailURL: "/images/AEBS.jpg",
+    videoURL: "/videos/AEBS.mp4",
     pageURL: "/projects/alice-electronic-bike-shop",
     desc: "An e-commerce web application as part of an academic project, offering multiple payment checkout options for a seamless user experience. The application supports diverse payment methods, including Google Pay, PayPal, and traditional card-based payments.",
     tags: [
@@ -99,6 +99,8 @@ const projects = [
       "Adyen",
       "Google Pay",
       "PayPal",
+      "Square",
+      "Stripe",
       "GitHub",
     ],
     contributions: [
