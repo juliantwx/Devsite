@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import projects from "../data/projects";
-import { CircularProgress } from "@mui/material";
+import { CircularProgress, Tooltip } from "@mui/material";
+import { FaLink } from "react-icons/fa6";
 
 function Project() {
   const videoRef = useRef(null);
@@ -89,7 +90,21 @@ function Project() {
             />
           </div>
           <div className="my-4 sm:my-7">
-            <h1 className="mb-1 text-3xl sm:text-5xl">{project.name}</h1>
+            <div className="flex items-center gap-3">
+              <h1 className="mb-1 text-3xl sm:text-5xl">{project.name}</h1>
+              {project.url && (
+                <Tooltip title="Visit Site" placement="top" arrow>
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-[32px] hover:text-gray transition-colors`}
+                  >
+                    <FaLink />
+                  </a>
+                </Tooltip>
+              )}
+            </div>
             <p className="mx-1 text-sm sm:text-base italic opacity-[0.7]">
               {project.type}
             </p>
@@ -100,9 +115,11 @@ function Project() {
           <p className="text-base sm:text-lg text-justify">{project.desc}</p>
           <div className="my-4 sm:my-7">
             <p className="mb-1 text-xl sm:text-3xl">Contributions</p>
-            <ul className="list-disc pl-10 space-y-2 text-base sm:text-lg text-justify">{project.contributions.map((con, index) => (
-              <li key={index}>{con}</li>
-            ))}</ul>
+            <ul className="list-disc pl-10 space-y-2 text-base sm:text-lg text-justify">
+              {project.contributions.map((con, index) => (
+                <li key={index}>{con}</li>
+              ))}
+            </ul>
           </div>
         </div>
       )}

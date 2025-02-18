@@ -2,11 +2,132 @@
 
 const projects = [
   {
+    name: "DineSeal",
+    type: "Web Application",
+    thumbnailURL: "/images/DineSeal.jpg", // TODO: Add thumbnail for DineSeal
+    videoURL: "/videos/DineSeal.mp4", // TODO: Add video for DineSeal
+    pageURL: "/projects/dine-seal",
+    // TODO: Update description for DineSeal
+    desc: "A web platform designed to empower restaurants and cafés to establish their online presence with ease. The project involved creating a drag-and-drop website builder using React.js integrated with Craft.js for dynamic front-end editing. We utilized Next.js for seamless API integration, ensuring smooth performance and scalability.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Craft.js",
+      "Figma",
+      "AGILE",
+      "Tailwind CSS",
+      "Material UI",
+      "API Integration",
+      "QA Testing",
+    ],
+    contributions: [
+      "Developed the frontend of the DineSeal web application using Next.js, implementing a drag-and-drop editor powered by Craft.js for restaurant and cafe owners to create and manage their websites.",
+      "Collaborated in an AGILE environment with frontend and backend developers to integrate APIs and deliver iterative updates.",
+      "Designed and optimized reusable React components with Tailwind CSS and MaterialUI, ensuring consistent styling and responsiveness across devices.",
+      "Worked closely with the QA tester to identify, troubleshoot, and resolve bugs, ensuring the delivery of a stable, bug-free product.",
+    ],
+  },
+  {
+    name: "Backpackers Buddy",
+    type: "iOS Application",
+    thumbnailURL: "/images/BackpackersBuddy.jpg", // TODO: Add thumbnail for Backpackers Buddy
+    videoURL: "/videos/BackpackersBuddy.mp4", // TODO: Add video for Backpackers Buddy
+    pageURL: "/projects/backpackers-buddy",
+    desc: "An iOS application that enables users to search for nearby lodgings and points of interest based on a chosen location. The app leverages location-based services and mapping technologies to provide an intuitive and seamless user experience.",
+    tags: [
+      "SwiftUI",
+      "Swift",
+      "Figma",
+      "Google Maps API",
+      "MapKit",
+      "DocC",
+      "Apple HIGs",
+      "GitHub",
+      "User Interface",
+      "Unit Testing",
+      "QA Testing",
+    ],
+    contributions: [
+      "Implemented location-based search functionalities using the Google Maps API to deliver accurate and detailed lodging and point-of-interest data.",
+      "Integrated MapKit to visually present search results on an interactive map, enhancing user navigation and exploration.",
+      "Designed and developed the user interface in alignment with Apple's Human Interface Guidelines, ensuring a clean, intuitive, and consistent user experience.",
+      "Used Figma to create wireframes and mockups for the app's user interface, providing a clear design vision and a reference for development.",
+      "Wrote unit tests to ensure functionality reliability and maintainability throughout development.",
+      "Authored project documentation using DocC to facilitate future development and knowledge sharing.",
+    ],
+  },
+  {
+    name: "SOIL",
+    type: "Web Application",
+    thumbnailURL: "/images/SOIL.jpg", // TODO: Add thumbnail for SOIL
+    videoURL: "/videos/SOIL.mp4", // TODO: Add video for SOIL
+    pageURL: "/projects/soil",
+    desc: "An e-commerce web application with a comprehensive set of features designed to enhance both user and admin experiences. The application includes shopping cart functionality, user registration and authentication, profile management, a review system, and real-time admin tools for content and engagement management.",
+    tags: [
+      "React.js",
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "GraphQL",
+      "Sequelize",
+      "MySQL",
+      "MaterialUI",
+      "GitHub",
+      "User Interface",
+      "QA Testing",
+    ],
+    contributions: [
+      "Designed and implemented an e-commerce platform with features such as shopping cart, user registration, authentication, profile management, and a review and rating system to enhance user interaction and satisfaction.",
+      "Created an admin platform for efficient content management, allowing admins to add, edit, delete products, manage user reviews, and track engagement metrics in real time.",
+      "Utilized Sequelize with MySQL to provide a secure, efficient, and scalable database management solution for handling product and user data.",
+      "Implemented GraphQL subscriptions for live updates, enabling real-time changes in user reviews and engagement metrics for both users and admins.",
+      "Developed an auto-flagging system using the Obscenity library to screen user reviews for inappropriate content, alerting admins for further review and ensuring content moderation.",
+    ],
+  },
+  {
+    name: "Alice's Electronic Bike Shop",
+    type: "Web Application",
+    thumbnailURL: "/images/AEBS.jpg", // TODO: Add thumbnail for AEBS
+    videoURL: "/videos/AEBS.mp4", // TODO: Add video for AEBS
+    pageURL: "/projects/alice-electronic-bike-shop",
+    desc: "An e-commerce web application as part of an academic project, offering multiple payment checkout options for a seamless user experience. The application supports diverse payment methods, including Google Pay, PayPal, and traditional card-based payments.",
+    tags: [
+      "React.js",
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "Adyen",
+      "Google Pay",
+      "PayPal",
+      "GitHub",
+    ],
+    contributions: [
+      "Developed the e-commerce web application with multiple payment checkout options, enhancing user experience with diverse payment methods.",
+      "Implemented the backend server using Node.js and Express.js to handle payment processing, integrating Adyen for secure and efficient transactions.",
+      "Integrated Google Pay and PayPal libraries on the frontend, providing users with flexible payment options for checkout.",
+    ],
+  },
+  {
+    name: "Today I Learned",
+    type: "Web Application",
+    thumbnailURL: "/images/TodayILearned.jpg",
+    videoURL: "/videos/TodayILearned.mp4",
+    pageURL: "/projects/today-i-learned",
+    url: "https://todayilearned-jtwx.netlify.app/",
+    desc: "A web application that enables users to share recently learned facts, with functionality to sort and filter posts by category for easier discovery and engagement. The application integrates a database to store and manage user data efficiently.",
+    tags: ["React.js", "Supabase", "JavaScript", "HTML", "CSS", "GitHub"],
+    contributions: [
+      "Designed and implemented a web application where users can share recently learned facts and sort posts by category for enhanced user experience and content organization.",
+      "Integrated Supabase as the backend to manage data storage, execute CRUD operations for user posts, and handle user authentication and authorization securely.",
+    ],
+  },
+  {
     name: "Claw Stars",
     type: "Mobile Game",
     thumbnailURL: "/images/ClawStars.jpg",
     videoURL: "/videos/ClawStars.mp4",
     pageURL: "/projects/claw-stars",
+    url: "https://clawstarsgame.com/",
     desc: "A unique Casual Social Claw Machine game that brings in the revolutionary gameplay of Claw Machines with the adorable collection of capsule toys. Travel from planet to planet as you gather the riches left by past civilizations and help rebuild these broken worlds. With each claw, you will gather gold, collect relics and even save creatures that have been mysteriously trapped! Compete with your friends and gather collectibles as you gather riches in the Claw Stars universe - one claw at a time!",
     tags: [
       "Unity",
@@ -37,11 +158,12 @@ const projects = [
     videoURL: "/videos/ColorLaunch.mp4",
     videoWidth: "30%",
     pageURL: "/projects/color-launch",
+    url: "https://drive.google.com/file/d/1dhDkJFyrV5nH5HZaR2SwiSZtRb9IXE6_/view?usp=sharing",
     desc: "An endless casual 'drag-and-shoot' game where players launch themselves through procedurally generated obstacle courses, shifting colors along the way. Precision and quick reflexes are key to mastering this vibrant challenge!",
     tags: [
       "Unity",
-      "Google Play",
       "C#",
+      "Google Play",
       "GitHub",
       "Procedural Generation",
       "Cloud Saving",
@@ -72,6 +194,7 @@ const projects = [
     thumbnailURL: "/images/GoGoldCastle.jpg",
     videoURL: "/videos/GoGoldCastle.mp4",
     pageURL: "/projects/go-gold-castle",
+    url: "https://store.steampowered.com/app/1443700/Go_Gold_Castle/",
     desc: "An action-packed 4 person multiplayer party pixel game. It has a variety of funky little pixel characters for players to choose from, each with their own awesome abilities and skills.",
     tags: [
       "Unity",
@@ -94,6 +217,7 @@ const projects = [
     thumbnailURL: "/images/Trapped.png",
     videoURL: "/videos/Trapped.mp4",
     pageURL: "/projects/trapped",
+    url: "https://rawg.io/games/trapped-itch-kdu-glenmarie-games-kdu-glenmarie-gam",
     desc: "You've been Trapped in a strange facility with no idea how to escape. Strange creatures lurk in the shadows, and danger is everywhere. Armed with an experimental gun and unlimited ammo, you'll have to fight your way through environmental hazards and relentless enemies. Think fast, shoot faster, and break free in this intense 2D platform shooter.",
     tags: ["Unity", "C#", "GitHub", "Enemy AI Development", "QA Testing"],
     contributions: [
@@ -106,6 +230,7 @@ const projects = [
     thumbnailURL: "/images/Survive!.png",
     videoURL: "/videos/Survive!.mp4",
     pageURL: "/projects/survive!",
+    url: "https://drive.google.com/file/d/1mXsydVcG1U3yB0BtJpwoLpr34DLvF0_C/view",
     desc: "A fast-paced 2D endless shooter set in a dying world consumed by 'The Entity.' With danger closing in, players must outrun the relentless force while taking down enemies that stand in their way. How long can you survive?",
     tags: [
       "Unity",
@@ -139,6 +264,7 @@ const projects = [
     videoURL: "/videos/BoxMania.mp4",
     videoWidth: "27.5%",
     pageURL: "/projects/box-mania",
+    url: "https://drive.google.com/file/d/1z8LddQDYUurYIlwvSDAXbNDR_Yb4L_D9/view",
     desc: "A fast-paced, online multiplayer tapping game with a mathematical twist. Two players compete to reach the target score first, with their points increasing or decreasing based on their multiplier. Quick reflexes and strategy will determine the winner!",
     tags: [
       "Unity",
@@ -162,6 +288,7 @@ const projects = [
     thumbnailURL: "/images/Traceur.jpg",
     videoURL: "/videos/Traceur.mp4",
     pageURL: "/projects/traceur",
+    url: "https://apkpure.com/traceur/com.Oatopus.Traceur",
     desc: "A fast-paced runner where players must rely on instinct to navigate perilous environments. Race toward your objective while evading deadly traps and outrunning relentless enemies. Every decision leaves a lasting impact, shaping the challenges you'll face further down the road.",
     tags: ["Unity", "C#", "GitHub", "User Interface", "QA Testing"],
     contributions: [
