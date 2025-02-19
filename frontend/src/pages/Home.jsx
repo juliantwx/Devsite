@@ -96,21 +96,20 @@ function Home() {
         <h1 className="text-3xl font-bold">ABOUT ME</h1>
         <p className="text-justify">
           Hello and welcome to my online portfolio! I'm <b>Julian Tan</b>, a
-          passionate <b>Full-Stack Developer</b>, <b>Game Developer</b>, and{" "}
-          <b>iOS Developer</b> with a strong background in building innovative
-          applications and immersive experiences. I bring a unique combination
-          of technical expertise and creative problem-solving skills, honed
-          through years of academic and professional experience.
+          passionate <b>full-stack</b>, <b>game</b>, and <b>iOS Developer</b>{" "}
+          with a strong background in building innovative applications and
+          immersive experiences. I bring a unique combination of technical
+          expertise and creative problem-solving skills, honed through years of
+          academic and professional experience.
           <br />
           <br />I hold a <b>Master of Information Technology</b> from{" "}
-          <b>RMIT University</b>, where I achieved a GPA of <b>3.6</b> and
-          deepened my expertise in emerging technologies. This drive for
-          continuous learning led me to pursue my master's degree, broadening my
-          skill set beyond game development and helping me become a more
-          versatile developer. My{" "}
+          <b>RMIT University</b>, where I expanded my expertise in emerging
+          technologies and strengthened my versatility as a developer. This
+          pursuit of continuous growth is built upon my{" "}
           <b>Bachelor's degree in Game Development (HONS)</b> from the{" "}
-          <b>University of Wollongong Malaysia</b> provided the foundation for
-          my journey in creating engaging and interactive digital content.
+          <b>University of Wollongong Malaysia</b>, which laid the foundation
+          for my passion for creating engaging and interactive digital
+          experiences.
           <br />
           <br />
           Professionally, I have experience in diverse roles, from developing
