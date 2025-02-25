@@ -6,12 +6,13 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { TextField } from "@mui/material";
+import messageService from "../api/messageService";
 
 function ContactMe({ open, setIsOpen }) {
   // useState to store form data
   const [formData, setFormData] = useState({
-    email: "",
-    message: "",
+    Email: "",
+    Content: "",
   });
 
   // Updates the form data when a text field is being updated
@@ -21,6 +22,23 @@ function ContactMe({ open, setIsOpen }) {
       ...prevState,
       [name]: value,
     }));
+  };
+
+  const handleSubmit = async () => {
+    try {
+      // TODO: Send message to backend server
+      await messageService.sendMessage(formData);
+      // TODO: Lock website while awaiting server response
+      // TODO: Unlock website, clear form data, and close this dialog box
+      alert("Message sent successfully!");
+      setFormData({
+        Email: "",
+        Content: "",
+      });
+      handleClose();
+    } catch {
+      alert("Failed to send message. Please try again later.");
+    }
   };
 
   // Closes this form
@@ -45,8 +63,8 @@ function ContactMe({ open, setIsOpen }) {
           reach out and send me a message!
         </DialogContentText>
         <TextField
-          name="email"
-          value={formData.email}
+          name="Email"
+          value={formData.Email}
           onChange={handleChange}
           placeholder="Email Address"
           fullWidth
@@ -54,8 +72,8 @@ function ContactMe({ open, setIsOpen }) {
           sx={{ marginTop: 2 }}
         />
         <TextField
-          name="message"
-          value={formData.message}
+          name="Content"
+          value={formData.Content}
           onChange={handleChange}
           placeholder="Message"
           fullWidth
@@ -68,21 +86,7 @@ function ContactMe({ open, setIsOpen }) {
         <Button variant="outlined" color="error" onClick={handleClose}>
           Cancel
         </Button>
-        <Button
-          variant="outlined"
-          onClick={() => {
-            // TODO: Send message to backend server
-            alert(JSON.stringify(formData));
-            // TODO: Lock website while awaiting server response
-            // TODO: Unlock website, clear form data, and close this dialog box
-            setFormData({
-              email: "",
-              message: "",
-            });
-            handleClose();
-          }}
-          autoFocus
-        >
+        <Button variant="outlined" onClick={handleSubmit} autoFocus>
           Send
         </Button>
       </DialogActions>

@@ -35,6 +35,7 @@ public class MessageController : ControllerBase
         await mContext.SaveChangesAsync();
 
         // Send an aknowledgement email to the sender's email address
+        
 
         // Status Code - 201: Resource created
         return CreatedAtAction(nameof(SendMessage), new { Message = "Message sent successfully! I will get back to you shortly :)", SentMessage = message });
