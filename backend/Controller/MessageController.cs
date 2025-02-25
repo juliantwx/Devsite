@@ -1,33 +1,38 @@
 using Microsoft.AspNetCore.Mvc;
 using backend.Model;
+using Microsoft.EntityFrameworkCore;
 
 [Route("api/[controller]")]
 [ApiController]
 public class MessageController : ControllerBase
 {
-    [HttpGet]
-    public ActionResult<IEnumerable<Message>> GetMessages()
-    {
-        // TODO: Retrieve all messages from backend database
-        List<Message> messages = new List<Message>(); // UPDATE THIS TO USE DATABASE
+    private readonly AppDbContext mContext;
 
-        // Status Code - 200: Success, returns all messages
-        return Ok(messages);
+    public MessageController(AppDbContext context)
+    {
+        mContext = context;
     }
 
 
-    // POST: Receives a message from the sender and stores it in the database
+    // Returns all the messages from the backend database
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Message>>> GetMessages()
+    {
+        // Retrieve all messages from backend database
+        return await mContext.Messages.ToListAsync();
+    }
+
+
+    // Receives a message from the sender and stores it in the database
     [HttpPost]
-    public ActionResult SendMessage([FromBody] Message message)
+    public async Task<ActionResult> SendMessage([FromBody] Message message)
     {
         // Verify message before executing operations
         if (!ModelState.IsValid) return BadRequest(ModelState);
 
-        Console.WriteLine($"Email Address: {message.Email}");
-        Console.WriteLine($"Received at: {message.DateReceived}");
-        Console.WriteLine($"Message: {message.Content}");
-
         // Store the message in the database
+        mContext.Messages.Add(message);
+        await mContext.SaveChangesAsync();
 
         // Send an aknowledgement email to the sender's email address
 
@@ -35,10 +40,17 @@ public class MessageController : ControllerBase
         return CreatedAtAction(nameof(SendMessage), new { Message = "Message sent successfully! I will get back to you shortly :)", SentMessage = message });
     }
 
+    // Deletes a message from the backend database
     [HttpDelete("{id}")]
-    public ActionResult DeleteMessage(int id)
+    public async Task<ActionResult> DeleteMessage(int id)
     {
-        // TODO: Delete message from backend database
+        // Find the message to be deleted
+        var message = await mContext.Messages.FindAsync(id);
+        if (message == null) return NotFound();
+
+        // Delete the message and save changes
+        mContext.Messages.Remove(message);
+        await mContext.SaveChangesAsync();
 
         // Status Code - 204: Success but no content
         return NoContent();
