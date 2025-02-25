@@ -16,6 +16,6 @@ The frontend is hosted on Netlify and integrated with GitHub to support continuo
 6. Embela Carousel
 7. Typewriter-effect
 
-## Back-End
+## Back-End Server
 
 ## Database
