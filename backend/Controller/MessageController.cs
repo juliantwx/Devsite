@@ -32,15 +32,22 @@ public class MessageController : ControllerBase
         // Verify message before executing operations
         if (!ModelState.IsValid) return BadRequest(ModelState);
 
-        // Store the message in the database
-        mContext.Messages.Add(message);
-        await mContext.SaveChangesAsync();
+        try
+        {
+            // Store the message in the database
+            mContext.Messages.Add(message);
+            await mContext.SaveChangesAsync();
 
-        // Send an aknowledgement email to the sender's email address
-        SendEmail(message.Email, "Thank you for reaching out!", "Hi there,\n\nThank you so much for reaching out! I appreciate your message and will get back to you as soon as possible.\n\nYour inquiry is important to me, and I'll make sure to respond as quickly as I can.\n\nBest regards,\nJulian Tan");
+            // Send an aknowledgement email to the sender's email address
+            SendEmail(message.Email, "Thank you for reaching out!", "Hi there,\n\nThank you so much for reaching out! I appreciate your message and will get back to you as soon as possible.\n\nYour inquiry is important to me, and I'll make sure to respond as quickly as I can.\n\nBest regards,\nJulian Tan");
 
-        // Status Code - 201: Resource created
-        return CreatedAtAction(nameof(SendMessage), new { response = "Message sent successfully! I will get back to you shortly :)", sentMessage = message });
+            // Status Code - 201: Resource created
+            return CreatedAtAction(nameof(SendMessage), new { response = "Message sent successfully! I will get back to you shortly :)", sentMessage = message });
+        }
+        catch (Exception e)
+        {
+            return StatusCode(500, new { response = "An error occured while sending the message. Please try again later." });
+        }
     }
 
     // Deletes a message from the backend database
