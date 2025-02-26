@@ -15,6 +15,7 @@ import Projects from "./pages/Projects";
 import Project from "./pages/Project";
 import NotFound from "./pages/NotFound";
 import Maintenance from "./pages/Maintenance";
+import Messages from "./pages/Messages";
 
 function App() {
   const isMaintenance = false; // TODO: Fetch this variable through subscription to the backend server instead
@@ -55,6 +56,7 @@ function App() {
               <Route path="/projects/soil" element={<Project />} />
               <Route path="/projects/backpackers-buddy" element={<Project />} />
               <Route path="/projects/dine-seal" element={<Project />} />
+              <Route path="/messages" element={<Messages />} />
               {/* Reroute all non-existing routes to the 404 page */}
               <Route path="*" element={<NotFound />} />
             </>

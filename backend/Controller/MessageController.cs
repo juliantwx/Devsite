@@ -44,7 +44,7 @@ public class MessageController : ControllerBase
             // Status Code - 201: Resource created
             return CreatedAtAction(nameof(SendMessage), new { response = "Message sent successfully! I will get back to you shortly :)", sentMessage = message });
         }
-        catch (Exception e)
+        catch
         {
             return StatusCode(500, new { response = "An error occured while sending the message. Please try again later." });
         }
